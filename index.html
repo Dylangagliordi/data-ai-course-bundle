@@ -5,225 +5,474 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AN 306 · Complete Course Bundle</title>
 <style>
-  :root {
-    --bg: #0f1117;
-    --surface: #1a1d2e;
-    --border: #2a2d3e;
-    --text: #e2e8f0;
-    --muted: #8892a4;
-    --accent: #7c8ff5;
-    --accent2: #56d9b0;
-    --accent3: #f59e45;
-    --accent4: #e879a0;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'Segoe UI', system-ui, sans-serif;
-    display: flex;
-    min-height: 100vh;
-  }
-  .sidebar {
-    width: 280px;
-    min-width: 280px;
-    background: var(--surface);
-    border-right: 1px solid var(--border);
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    position: sticky;
-    top: 0;
-    overflow-y: auto;
-  }
-  .sidebar-header {
-    padding: 24px 20px 16px;
-    border-bottom: 1px solid var(--border);
-  }
-  .sidebar-header h1 {
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-  }
-  .sidebar-header p {
-    font-size: 0.75rem;
-    color: var(--muted);
-    margin-top: 4px;
-  }
-  .nav-section { padding: 12px 0; }
-  .nav-item {
-    padding: 10px 20px;
-    font-size: 0.85rem;
-    color: var(--muted);
-    cursor: pointer;
-    transition: background 0.15s, color 0.15s;
-    border-left: 3px solid transparent;
-    line-height: 1.4;
-  }
-  .nav-item:hover {
-    background: rgba(124,143,245,0.08);
-    color: var(--text);
-    border-left-color: var(--accent);
-  }
-  .nav-item.active {
-    background: rgba(124,143,245,0.12);
-    color: var(--accent);
-    border-left-color: var(--accent);
-    font-weight: 500;
-  }
-  .main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 24px;
-  }
-  .part-frame {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    z-index: 100;
-    background: #fff;
-    flex-direction: column;
-  }
-  .part-frame.active {
-    display: flex;
-  }
-  .frame-bar {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 8px 16px;
-    background: #1a1d2e;
-    border-bottom: 1px solid #2a2d3e;
-    flex-shrink: 0;
-  }
-  .frame-back {
-    background: rgba(124,143,245,0.15);
-    color: #7c8ff5;
-    border: 1px solid rgba(124,143,245,0.3);
-    padding: 6px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 600;
-  }
-  .frame-back:hover { background: rgba(124,143,245,0.25); }
-  .frame-title {
-    color: #e2e8f0;
-    font-size: 13px;
-    font-weight: 500;
-  }
-  .part-frame iframe {
-    flex: 1;
-    border: none;
-    width: 100%;
-  }
-  .welcome { max-width: 640px; text-align: center; }
-  .welcome h2 {
-    font-size: 2rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 16px;
-  }
-  .welcome p { color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: 32px; }
-  .part-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 12px;
-    width: 100%;
-    max-width: 800px;
-    margin-top: 16px;
-  }
-  .part-btn {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 16px;
-    color: var(--text);
-    cursor: pointer;
-    font-size: 0.82rem;
-    text-align: left;
-    transition: border-color 0.2s, background 0.2s;
-    line-height: 1.4;
-  }
-  .part-btn:hover {
-    border-color: var(--accent);
-    background: rgba(124,143,245,0.08);
-    color: var(--accent);
-  }
-  .badge {
-    display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 600;
-    padding: 2px 7px;
-    border-radius: 10px;
-    margin-bottom: 8px;
-    background: rgba(124,143,245,0.15);
-    color: var(--accent);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-  }
-  .badge.green { background: rgba(86,217,176,0.15); color: var(--accent2); }
-  .badge.orange { background: rgba(245,158,69,0.15); color: var(--accent3); }
-  .badge.pink { background: rgba(232,121,160,0.15); color: var(--accent4); }
+:root {
+  --bg: #0f1117;
+  --surface: #1a1d2e;
+  --surface2: #222640;
+  --border: #2a2d3e;
+  --text: #e2e8f0;
+  --muted: #8892a4;
+  --accent: #7c8ff5;
+  --accent2: #56d9b0;
+  --accent3: #f59e45;
+  --accent4: #e879a0;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 14px;
+  min-height: 100vh;
+}
+
+/* ── HOME LAYOUT ─────────────────────────── */
+.home {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 32px 80px;
+}
+.home-header {
+  margin-bottom: 48px;
+}
+.home-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+}
+.home-header p {
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* ── START HERE BANNER ───────────────────── */
+.start-banner {
+  background: linear-gradient(135deg, rgba(124,143,245,0.12), rgba(86,217,176,0.08));
+  border: 1px solid rgba(124,143,245,0.3);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 48px;
+}
+.start-banner h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+.reading-path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+.path-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.path-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.3;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.path-btn:hover {
+  border-color: var(--accent);
+  background: rgba(124,143,245,0.1);
+  color: var(--accent);
+}
+.path-btn .step-num {
+  display: block;
+  font-size: 0.65rem;
+  color: var(--muted);
+  margin-bottom: 2px;
+  font-weight: 400;
+}
+.path-arrow {
+  color: var(--muted);
+  font-size: 1rem;
+  flex-shrink: 0;
+}
+
+/* ── REALM SECTIONS ─────────────────────── */
+.realm {
+  margin-bottom: 36px;
+}
+.realm-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border);
+}
+.realm-icon {
+  font-size: 1.3rem;
+}
+.realm-label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.realm-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.realm-desc {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-left: auto;
+  text-align: right;
+  max-width: 300px;
+  line-height: 1.4;
+}
+
+/* ── PART CARDS ──────────────────────────── */
+.part-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+}
+.part-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  position: relative;
+  overflow: hidden;
+}
+.part-card:hover {
+  border-color: var(--accent);
+  background: var(--surface2);
+  transform: translateY(-1px);
+}
+.part-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.part-tag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+.tag-blue   { background: rgba(124,143,245,0.15); color: var(--accent); }
+.tag-green  { background: rgba(86,217,176,0.15);  color: var(--accent2); }
+.tag-orange { background: rgba(245,158,69,0.15);  color: var(--accent3); }
+.tag-pink   { background: rgba(232,121,160,0.15); color: var(--accent4); }
+.tag-muted  { background: rgba(136,146,164,0.15); color: var(--muted); }
+
+.part-num-label {
+  font-size: 0.65rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+.part-card-name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.part-card-desc {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+/* ── PART FRAME (full-screen overlay) ────── */
+.part-frame {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 100;
+  background: #fff;
+  flex-direction: column;
+}
+.part-frame.active { display: flex; }
+.frame-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  background: #1a1d2e;
+  border-bottom: 1px solid #2a2d3e;
+  flex-shrink: 0;
+}
+.frame-back {
+  background: rgba(124,143,245,0.15);
+  color: #7c8ff5;
+  border: 1px solid rgba(124,143,245,0.3);
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+.frame-back:hover { background: rgba(124,143,245,0.25); }
+.frame-title { color: #e2e8f0; font-size: 13px; font-weight: 500; }
+.part-frame iframe { flex: 1; border: none; width: 100%; }
 </style>
 </head>
 <body>
-<div class="sidebar">
-  <div class="sidebar-header">
-    <h1>AN 306</h1>
-    <p>Complete Course Bundle · 16 Parts</p>
+
+<div class="home">
+
+  <!-- HEADER -->
+  <div class="home-header">
+    <h1>AN 306 · Data Analytics</h1>
+    <p>Complete course bundle · 16 parts · from SQL foundations to machine learning and LLMs</p>
   </div>
-  <div class="nav-section">
-    <div class="nav-item" onclick="openPart('part-01')">Parts 0–1: Course Intro & Analytics Foundations</div>
-    <div class="nav-item" onclick="openPart('part-02')">Part 2: Python Toolkit</div>
-    <div class="nav-item" onclick="openPart('part-03')">Part 3: Data Cleaning</div>
-    <div class="nav-item" onclick="openPart('part-04')">Part 4: Regression</div>
-    <div class="nav-item" onclick="openPart('part-05')">Part 5: Time-Series Forecasting</div>
-    <div class="nav-item" onclick="openPart('part-06')">Part 6: Clustering</div>
-    <div class="nav-item" onclick="openPart('part-07')">Part 7: Association Rules</div>
-    <div class="nav-item" onclick="openPart('part-08')">Part 8: NLP</div>
-    <div class="nav-item" onclick="openPart('part-08b')">Part 8b: Advanced NLP Lab</div>
-    <div class="nav-item" onclick="openPart('part-09')">Part 9: Job Readiness</div>
-    <div class="nav-item" onclick="openPart('part-10a')">Part 10a: How Neural Networks Learn</div>
-    <div class="nav-item" onclick="openPart('part-10b')">Part 10b: What Really Is an LLM</div>
-    <div class="nav-item" onclick="openPart('part-11')">Part 11: AN300 Integration</div>
-    <div class="nav-item" onclick="openPart('part-12')">Part 12: Model Selection</div>
-    <div class="nav-item" onclick="openPart('part-13')">Part 13: Statistical Inference</div>
-    <div class="nav-item" onclick="openPart('appendix')">Appendix</div>
-  </div>
-</div>
-<div class="main" id="main-content">
-  <div class="welcome">
-    <h2>AN 306 Course Bundle</h2>
-    <p>Select any part from the sidebar to open it in a new tab, or click a card below to jump straight in.</p>
-    <div class="part-grid">
-      <div class="part-btn" onclick="openPart('part-01')"><span class="badge">Intro</span><br>Parts 0–1: Foundations</div>
-      <div class="part-btn" onclick="openPart('part-02')"><span class="badge green">Tool</span><br>Part 2: Python Toolkit</div>
-      <div class="part-btn" onclick="openPart('part-03')"><span class="badge green">Data</span><br>Part 3: Data Cleaning</div>
-      <div class="part-btn" onclick="openPart('part-04')"><span class="badge orange">Model</span><br>Part 4: Regression</div>
-      <div class="part-btn" onclick="openPart('part-05')"><span class="badge orange">Model</span><br>Part 5: Time-Series</div>
-      <div class="part-btn" onclick="openPart('part-06')"><span class="badge orange">Model</span><br>Part 6: Clustering</div>
-      <div class="part-btn" onclick="openPart('part-07')"><span class="badge orange">Model</span><br>Part 7: Assoc. Rules</div>
-      <div class="part-btn" onclick="openPart('part-08')"><span class="badge pink">NLP</span><br>Part 8: NLP</div>
-      <div class="part-btn" onclick="openPart('part-08b')"><span class="badge pink">NLP</span><br>Part 8b: NLP Lab</div>
-      <div class="part-btn" onclick="openPart('part-09')"><span class="badge">Career</span><br>Part 9: Job Readiness</div>
-      <div class="part-btn" onclick="openPart('part-10a')"><span class="badge pink">AI</span><br>Part 10a: Neural Nets</div>
-      <div class="part-btn" onclick="openPart('part-10b')"><span class="badge pink">AI</span><br>Part 10b: What Is an LLM</div>
-      <div class="part-btn" onclick="openPart('part-11')"><span class="badge green">Bridge</span><br>Part 11: AN300 Bridge</div>
-      <div class="part-btn" onclick="openPart('part-12')"><span class="badge orange">Model</span><br>Part 12: Model Selection</div>
-      <div class="part-btn" onclick="openPart('part-13')"><span class="badge orange">Stats</span><br>Part 13: Stat Inference</div>
-      <div class="part-btn" onclick="openPart('appendix')"><span class="badge">Ref</span><br>Appendix</div>
+
+  <!-- START HERE: RECOMMENDED READING ORDER -->
+  <div class="start-banner">
+    <h2>🚀 Start Here — Recommended Reading Order</h2>
+    <div class="reading-path">
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-01')"><span class="step-num">Step 1</span>Foundations</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-02')"><span class="step-num">Step 2</span>Python Toolkit</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-03')"><span class="step-num">Step 3</span>Data Cleaning</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-04')"><span class="step-num">Step 4</span>Regression</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-05')"><span class="step-num">Step 5</span>Time-Series</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-06')"><span class="step-num">Step 6</span>Clustering</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-07')"><span class="step-num">Step 7</span>Assoc. Rules</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-08')"><span class="step-num">Step 8</span>NLP</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-10a')"><span class="step-num">Step 9</span>Neural Nets</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-10b')"><span class="step-num">Step 10</span>LLMs</div>
+        <span class="path-arrow">→</span>
+      </div>
+      <div class="path-step">
+        <div class="path-btn" onclick="openPart('part-09')"><span class="step-num">Step 11</span>Job Readiness</div>
+      </div>
     </div>
   </div>
+
+  <!-- REALM 1: FOUNDATIONS -->
+  <div class="realm">
+    <div class="realm-header">
+      <span class="realm-icon">🏗️</span>
+      <div>
+        <div class="realm-label">Realm 1</div>
+        <div class="realm-title">Foundations — The Toolkit</div>
+      </div>
+      <div class="realm-desc">SQL, Python, Excel — how the tools fit together and when to use each</div>
+    </div>
+    <div class="part-cards">
+      <div class="part-card" onclick="openPart('part-01')">
+        <div class="part-card-top"><span class="part-tag tag-blue">Intro</span><span class="part-num-label">Parts 0–1</span></div>
+        <div class="part-card-name">Course Intro & Analytics Foundations</div>
+        <div class="part-card-desc">What data analytics is, the SQL→Python→Excel workflow, tool selection, math foundations</div>
+      </div>
+      <div class="part-card" onclick="openPart('part-02')">
+        <div class="part-card-top"><span class="part-tag tag-green">Tool</span><span class="part-num-label">Part 2</span></div>
+        <div class="part-card-name">Python Toolkit</div>
+        <div class="part-card-desc">pandas, NumPy, Matplotlib, Seaborn — the core data stack from scratch</div>
+      </div>
+      <div class="part-card" onclick="openPart('part-03')">
+        <div class="part-card-top"><span class="part-tag tag-green">Tool</span><span class="part-num-label">Part 3</span></div>
+        <div class="part-card-name">Data Cleaning</div>
+        <div class="part-card-desc">Missing values, outliers, type fixing, feature engineering — raw data → model-ready</div>
+      </div>
+      <div class="part-card" onclick="openPart('part-11')">
+        <div class="part-card-top"><span class="part-tag tag-green">Bridge</span><span class="part-num-label">Part 11</span></div>
+        <div class="part-card-name">AN300 Integration</div>
+        <div class="part-card-desc">Connects this course to AN300 concepts — probability, distributions, statistical thinking</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REALM 2: MODELING -->
+  <div class="realm">
+    <div class="realm-header">
+      <span class="realm-icon">📈</span>
+      <div>
+        <div class="realm-label">Realm 2</div>
+        <div class="realm-title">Statistical Modeling</div>
+      </div>
+      <div class="realm-desc">Build and interpret models — regression, time-series, inference</div>
+    </div>
+    <div class="part-cards">
+      <div class="part-card" onclick="openPart('part-04')">
+        <div class="part-card-top"><span class="part-tag tag-orange">Model</span><span class="part-num-label">Part 4</span></div>
+        <div class="part-card-name">Regression</div>
+        <div class="part-card-desc">OLS, multiple regression, ceteris paribus, R², diagnostics, when regression breaks</div>
+      </div>
+      <div class="part-card" onclick="openPart('part-05')">
+        <div class="part-card-top"><span class="part-tag tag-orange">Model</span><span class="part-num-label">Part 5</span></div>
+        <div class="part-card-name">Time-Series Forecasting</div>
+        <div class="part-card-desc">Trend/seasonality decomposition, ARIMA, MA models, backtesting forecasts</div>
+      </div>
+      <div class="part-card" onclick="openPart('part-12')">
+        <div class="part-card-top"><span class="part-tag tag-orange">Model</span><span class="part-num-label">Part 12</span></div>
+        <div class="part-card-name">Model Selection</div>
+        <div class="part-card-desc">Cross-validation, bias-variance tradeoff, AIC/BIC, choosing the right model</div>
+      </div>
+      <div class="part-card" onclick="openPart('part-13')">
+        <div class="part-card-top"><span class="part-tag tag-orange">Stats</span><span class="part-num-label">Part 13</span></div>
+        <div class="part-card-name">Statistical Inference</div>
+        <div class="part-card-desc">Hypothesis testing, p-values, confidence intervals, t-tests, ANOVA</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REALM 3: ML METHODS -->
+  <div class="realm">
+    <div class="realm-header">
+      <span class="realm-icon">🤖</span>
+      <div>
+        <div class="realm-label">Realm 3</div>
+        <div class="realm-title">Machine Learning Methods</div>
+      </div>
+      <div class="realm-desc">Unsupervised and pattern-finding techniques</div>
+    </div>
+    <div class="part-cards">
+      <div class="part-card" onclick="openPart('part-06')">
+        <div class="part-card-top"><span class="part-tag tag-orange">ML</span><span class="part-num-label">Part 6</span></div>
+        <div class="part-card-name">Clustering</div>
+        <div class="part-card-desc">K-means, hierarchical clustering, choosing k, interpreting cluster profiles</div>
+      </div>
+      <div class="part-card" onclick="openPart('part-07')">
+        <div class="part-card-top"><span class="part-tag tag-orange">ML</span><span class="part-num-label">Part 7</span></div>
+        <div class="part-card-name">Association Rules</div>
+        <div class="part-card-desc">Market basket analysis, Apriori, support/confidence/lift — finding hidden patterns</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REALM 4: NLP -->
+  <div class="realm">
+    <div class="realm-header">
+      <span class="realm-icon">💬</span>
+      <div>
+        <div class="realm-label">Realm 4</div>
+        <div class="realm-title">Natural Language Processing</div>
+      </div>
+      <div class="realm-desc">Text as data — from tokenization to sentiment to embeddings</div>
+    </div>
+    <div class="part-cards">
+      <div class="part-card" onclick="openPart('part-08')">
+        <div class="part-card-top"><span class="part-tag tag-pink">NLP</span><span class="part-num-label">Part 8</span></div>
+        <div class="part-card-name">NLP Foundations</div>
+        <div class="part-card-desc">Tokenization, TF-IDF, sentiment analysis, topic modeling with LDA</div>
+      </div>
+      <div class="part-card" onclick="openPart('part-08b')">
+        <div class="part-card-top"><span class="part-tag tag-pink">NLP Lab</span><span class="part-num-label">Part 8b</span></div>
+        <div class="part-card-name">Advanced NLP Lab</div>
+        <div class="part-card-desc">Embeddings, cosine similarity, clustering text — hands-on with real data</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REALM 5: AI -->
+  <div class="realm">
+    <div class="realm-header">
+      <span class="realm-icon">🧠</span>
+      <div>
+        <div class="realm-label">Realm 5</div>
+        <div class="realm-title">AI & Deep Learning</div>
+      </div>
+      <div class="realm-desc">How neural networks learn and what LLMs actually are under the hood</div>
+    </div>
+    <div class="part-cards">
+      <div class="part-card" onclick="openPart('part-10a')">
+        <div class="part-card-top"><span class="part-tag tag-pink">AI</span><span class="part-num-label">Part 10a</span></div>
+        <div class="part-card-name">How Neural Networks Learn</div>
+        <div class="part-card-desc">Perceptrons, backpropagation, gradient descent, activation functions — built from intuition up</div>
+      </div>
+      <div class="part-card" onclick="openPart('part-10b')">
+        <div class="part-card-top"><span class="part-tag tag-pink">AI</span><span class="part-num-label">Part 10b</span></div>
+        <div class="part-card-name">What Really Is an LLM</div>
+        <div class="part-card-desc">Transformers, attention, tokens, temperature — how ChatGPT/Claude actually work</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- REALM 6: CAREER + REFERENCE -->
+  <div class="realm">
+    <div class="realm-header">
+      <span class="realm-icon">🎯</span>
+      <div>
+        <div class="realm-label">Realm 6</div>
+        <div class="realm-title">Career & Reference</div>
+      </div>
+      <div class="realm-desc">Job readiness, formulas, glossary, code library</div>
+    </div>
+    <div class="part-cards">
+      <div class="part-card" onclick="openPart('part-09')">
+        <div class="part-card-top"><span class="part-tag tag-blue">Career</span><span class="part-num-label">Part 9</span></div>
+        <div class="part-card-name">Job Readiness</div>
+        <div class="part-card-desc">Interview prep, portfolio projects, resume tips, what analytics roles actually do</div>
+      </div>
+      <div class="part-card" onclick="openPart('appendix')">
+        <div class="part-card-top"><span class="part-tag tag-muted">Ref</span><span class="part-num-label">Appendix</span></div>
+        <div class="part-card-name">Appendix</div>
+        <div class="part-card-desc">Glossary, formula reference, source error register, source map, code library</div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /home -->
+
+<!-- PART VIEWER OVERLAY -->
+<div class="part-frame" id="part-frame">
+  <div class="frame-bar">
+    <button class="frame-back" onclick="closePart()">← Back to Course</button>
+    <span class="frame-title" id="frame-title"></span>
+  </div>
+  <iframe id="part-iframe" src="about:blank"></iframe>
 </div>
+
 
 <script>
 const PARTS = {
@@ -2154,13 +2403,6 @@ const obs = new IntersectionObserver((entries) => {
 sections.forEach(s => obs.observe(s));
 </script>
 
-<div class="part-frame" id="part-frame">
-  <div class="frame-bar">
-    <button class="frame-back" onclick="closePart()">← Back to Course</button>
-    <span class="frame-title" id="frame-title"></span>
-  </div>
-  <iframe id="part-iframe" src="about:blank"></iframe>
-</div>
 
 </body>
 </html>
