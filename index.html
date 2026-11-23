@@ -81,6 +81,47 @@
     justify-content: center;
     padding: 40px 24px;
   }
+  .part-frame {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 100;
+    background: #fff;
+    flex-direction: column;
+  }
+  .part-frame.active {
+    display: flex;
+  }
+  .frame-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 16px;
+    background: #1a1d2e;
+    border-bottom: 1px solid #2a2d3e;
+    flex-shrink: 0;
+  }
+  .frame-back {
+    background: rgba(124,143,245,0.15);
+    color: #7c8ff5;
+    border: 1px solid rgba(124,143,245,0.3);
+    padding: 6px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+  }
+  .frame-back:hover { background: rgba(124,143,245,0.25); }
+  .frame-title {
+    color: #e2e8f0;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .part-frame iframe {
+    flex: 1;
+    border: none;
+    width: 100%;
+  }
   .welcome { max-width: 640px; text-align: center; }
   .welcome h2 {
     font-size: 2rem;
@@ -2112,6 +2153,15 @@ const obs = new IntersectionObserver((entries) => {
 }, { threshold: 0.3 });
 sections.forEach(s => obs.observe(s));
 </script>
+
+<div class="part-frame" id="part-frame">
+  <div class="frame-bar">
+    <button class="frame-back" onclick="closePart()">← Back to Course</button>
+    <span class="frame-title" id="frame-title"></span>
+  </div>
+  <iframe id="part-iframe" src="about:blank"></iframe>
+</div>
+
 </body>
 </html>
 
@@ -17387,17 +17437,27 @@ window.addEventListener('scroll', () => {
 </body></html>`
 };
 
+const LABELS = {"part-01": "Parts 0–1: Course Intro & Analytics Foundations", "part-02": "Part 2: Python Toolkit", "part-03": "Part 3: Data Cleaning", "part-04": "Part 4: Regression", "part-05": "Part 5: Time-Series Forecasting", "part-06": "Part 6: Clustering", "part-07": "Part 7: Association Rules", "part-08": "Part 8: NLP", "part-08b": "Part 8b: Advanced NLP Lab", "part-09": "Part 9: Job Readiness", "part-10a": "Part 10a: How Neural Networks Learn", "part-10b": "Part 10b: What Really Is an LLM", "part-11": "Part 11: AN300 Integration", "part-12": "Part 12: Model Selection", "part-13": "Part 13: Statistical Inference", "appendix": "Appendix"};
+
 function openPart(id) {
   const html = PARTS[id];
   if (!html) { alert('Part not found: ' + id); return; }
   const blob = new Blob([html], {type: 'text/html'});
   const url = URL.createObjectURL(blob);
-  window.open(url, '_blank');
+  const iframe = document.getElementById('part-iframe');
+  iframe.src = url;
+  document.getElementById('frame-title').textContent = LABELS[id] || id;
+  document.getElementById('part-frame').classList.add('active');
   document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-  const labels = {"part-01": "Parts 0\u20131: Course Intro & Analytics Foundations", "part-02": "Part 2: Python Toolkit", "part-03": "Part 3: Data Cleaning", "part-04": "Part 4: Regression", "part-05": "Part 5: Time-Series Forecasting", "part-06": "Part 6: Clustering", "part-07": "Part 7: Association Rules", "part-08": "Part 8: NLP", "part-08b": "Part 8b: Advanced NLP Lab", "part-09": "Part 9: Job Readiness", "part-10a": "Part 10a: How Neural Networks Learn", "part-10b": "Part 10b: What Really Is an LLM", "part-11": "Part 11: AN300 Integration", "part-12": "Part 12: Model Selection", "part-13": "Part 13: Statistical Inference", "appendix": "Appendix"};
   document.querySelectorAll('.nav-item').forEach(el => {
-    if (el.textContent.trim() === (labels[id] || '')) el.classList.add('active');
+    if (el.textContent.trim() === (LABELS[id] || '')) el.classList.add('active');
   });
+}
+
+function closePart() {
+  document.getElementById('part-frame').classList.remove('active');
+  document.getElementById('part-iframe').src = 'about:blank';
+  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
 }
 </script>
 </body>
