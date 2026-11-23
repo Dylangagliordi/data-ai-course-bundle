@@ -6,205 +6,205 @@
 <title>AN 306 · Complete Course Bundle</title>
 <style>
 :root {
-  --bg: #0f1117;
-  --surface: #1a1d2e;
-  --surface2: #222640;
-  --border: #2a2d3e;
+  --bg: #0d0f1a;
+  --surface: #161829;
+  --surface2: #1e2138;
+  --border: #252840;
   --text: #e2e8f0;
-  --muted: #8892a4;
+  --muted: #7a8499;
   --accent: #7c8ff5;
   --accent2: #56d9b0;
   --accent3: #f59e45;
   --accent4: #e879a0;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body {
+html, body {
+  min-height: 100vh;
   background: var(--bg);
   color: var(--text);
   font-family: 'Segoe UI', system-ui, sans-serif;
   font-size: 14px;
-  min-height: 100vh;
 }
 
-/* ── HOME LAYOUT ─────────────────────────── */
-.home {
-  max-width: 1100px;
+/* ── PAGE ───────────────────────── */
+.homeroom {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 48px 32px 80px;
+  padding: 48px 28px 80px;
 }
-.home-header {
-  margin-bottom: 48px;
-}
-.home-header h1 {
-  font-size: 2rem;
+
+/* header */
+.hr-header { margin-bottom: 44px; }
+.hr-header h1 {
+  font-size: 1.75rem;
   font-weight: 800;
   background: linear-gradient(135deg, var(--accent), var(--accent2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  margin-bottom: 8px;
+  margin-bottom: 6px;
 }
-.home-header p {
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.6;
+.hr-header p { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+/* ── TIMELINE TRACK ──────────────── */
+.track {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
-/* ── START HERE BANNER ───────────────────── */
-.start-banner {
-  background: linear-gradient(135deg, rgba(124,143,245,0.12), rgba(86,217,176,0.08));
-  border: 1px solid rgba(124,143,245,0.3);
-  border-radius: 12px;
-  padding: 24px 28px;
-  margin-bottom: 48px;
-}
-.start-banner h2 {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--accent);
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 16px;
-}
-.reading-path {
+/* Phase = a row in the timeline */
+.phase {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  align-items: center;
+  align-items: flex-start;
+  gap: 0;
+  margin-bottom: 0;
 }
-.path-step {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.path-btn {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 8px 14px;
-  cursor: pointer;
-  color: var(--text);
-  font-size: 0.8rem;
-  font-weight: 500;
-  line-height: 1.3;
-  text-align: center;
-  transition: border-color 0.15s, background 0.15s;
-  white-space: nowrap;
-}
-.path-btn:hover {
-  border-color: var(--accent);
-  background: rgba(124,143,245,0.1);
-  color: var(--accent);
-}
-.path-btn .step-num {
-  display: block;
-  font-size: 0.65rem;
-  color: var(--muted);
-  margin-bottom: 2px;
-  font-weight: 400;
-}
-.path-arrow {
-  color: var(--muted);
-  font-size: 1rem;
+
+/* Left label column */
+.phase-label {
+  width: 120px;
   flex-shrink: 0;
+  padding: 18px 16px 18px 0;
+  text-align: right;
+  position: relative;
 }
-
-/* ── REALM SECTIONS ─────────────────────── */
-.realm {
-  margin-bottom: 36px;
-}
-.realm-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-}
-.realm-icon {
-  font-size: 1.3rem;
-}
-.realm-label {
-  font-size: 0.7rem;
+.phase-label-inner {
+  display: inline-block;
+  font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--muted);
-}
-.realm-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text);
-}
-.realm-desc {
-  font-size: 0.8rem;
-  color: var(--muted);
-  margin-left: auto;
-  text-align: right;
-  max-width: 300px;
   line-height: 1.4;
 }
-
-/* ── PART CARDS ──────────────────────────── */
-.part-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 10px;
+.phase-emoji {
+  display: block;
+  font-size: 1.1rem;
+  margin-bottom: 3px;
 }
-.part-card {
+
+/* Center spine */
+.spine-col {
+  width: 32px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.spine-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-top: 22px;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px rgba(124,143,245,0.4);
+}
+.spine-line {
+  width: 2px;
+  flex: 1;
+  background: linear-gradient(to bottom, var(--border), var(--border));
+  min-height: 20px;
+}
+.spine-line.last { background: transparent; }
+
+/* Cards area */
+.phase-cards {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 12px 0 20px 16px;
+}
+
+/* Individual card */
+.card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 10px;
-  padding: 16px;
+  padding: 14px 16px;
   cursor: pointer;
-  transition: border-color 0.15s, background 0.15s, transform 0.1s;
+  min-width: 155px;
+  max-width: 220px;
+  flex: 1 1 155px;
+  transition: border-color 0.15s, background 0.12s, transform 0.1s, box-shadow 0.15s;
   position: relative;
-  overflow: hidden;
 }
-.part-card:hover {
+.card:hover {
   border-color: var(--accent);
   background: var(--surface2);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(124,143,245,0.15);
 }
-.part-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 8px;
-}
-.part-tag {
+.card-num {
   font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 2px 8px;
-  border-radius: 10px;
-}
-.tag-blue   { background: rgba(124,143,245,0.15); color: var(--accent); }
-.tag-green  { background: rgba(86,217,176,0.15);  color: var(--accent2); }
-.tag-orange { background: rgba(245,158,69,0.15);  color: var(--accent3); }
-.tag-pink   { background: rgba(232,121,160,0.15); color: var(--accent4); }
-.tag-muted  { background: rgba(136,146,164,0.15); color: var(--muted); }
-
-.part-num-label {
-  font-size: 0.65rem;
   color: var(--muted);
-  font-weight: 500;
+  margin-bottom: 5px;
+  letter-spacing: 0.05em;
 }
-.part-card-name {
-  font-size: 0.88rem;
+.card-name {
+  font-size: 0.82rem;
   font-weight: 600;
   color: var(--text);
   line-height: 1.35;
-  margin-bottom: 6px;
+  margin-bottom: 7px;
 }
-.part-card-desc {
-  font-size: 0.75rem;
-  color: var(--muted);
-  line-height: 1.4;
+.card-tag {
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 20px;
 }
+.t-blue   { background: rgba(124,143,245,0.15); color: var(--accent); }
+.t-green  { background: rgba(86,217,176,0.15);  color: var(--accent2); }
+.t-orange { background: rgba(245,158,69,0.15);  color: var(--accent3); }
+.t-pink   { background: rgba(232,121,160,0.15); color: var(--accent4); }
+.t-muted  { background: rgba(122,132,153,0.15); color: var(--muted); }
 
-/* ── PART FRAME (full-screen overlay) ────── */
+/* ── START PATH BANNER ───────────── */
+.path-banner {
+  background: linear-gradient(135deg, rgba(124,143,245,0.08), rgba(86,217,176,0.05));
+  border: 1px solid rgba(124,143,245,0.2);
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 44px;
+}
+.path-banner h2 {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.path-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+.path-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 5px 11px;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: border-color 0.12s, background 0.12s, color 0.12s;
+  white-space: nowrap;
+}
+.path-btn .sn { display: block; font-size: 0.58rem; color: var(--muted); margin-bottom: 1px; }
+.path-btn:hover { border-color: var(--accent); background: rgba(124,143,245,0.1); color: var(--accent); }
+.pa { color: var(--border); padding: 0 2px; }
+
+/* ── PART FRAME OVERLAY ──────────── */
 .part-frame {
   display: none;
   position: fixed;
@@ -239,232 +239,196 @@ body {
 </style>
 </head>
 <body>
+<div class="homeroom">
 
-<div class="home">
-
-  <!-- HEADER -->
-  <div class="home-header">
-    <h1>AN 306 · Data Analytics</h1>
-    <p>Complete course bundle · 16 parts · from SQL foundations to machine learning and LLMs</p>
+  <div class="hr-header">
+    <h1>AN 306 · Course Map</h1>
+    <p>Click any card to open it. The timeline below shows the full arc of the course — from foundations to AI.</p>
   </div>
 
-  <!-- START HERE: RECOMMENDED READING ORDER -->
-  <div class="start-banner">
-    <h2>🚀 Start Here — Recommended Reading Order</h2>
-    <div class="reading-path">
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-01')"><span class="step-num">Step 1</span>Foundations</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-02')"><span class="step-num">Step 2</span>Python Toolkit</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-03')"><span class="step-num">Step 3</span>Data Cleaning</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-04')"><span class="step-num">Step 4</span>Regression</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-05')"><span class="step-num">Step 5</span>Time-Series</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-06')"><span class="step-num">Step 6</span>Clustering</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-07')"><span class="step-num">Step 7</span>Assoc. Rules</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-08')"><span class="step-num">Step 8</span>NLP</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-10a')"><span class="step-num">Step 9</span>Neural Nets</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-10b')"><span class="step-num">Step 10</span>LLMs</div>
-        <span class="path-arrow">→</span>
-      </div>
-      <div class="path-step">
-        <div class="path-btn" onclick="openPart('part-09')"><span class="step-num">Step 11</span>Job Readiness</div>
-      </div>
+  <!-- RECOMMENDED PATH -->
+  <div class="path-banner">
+    <h2>🚀 Recommended Reading Order</h2>
+    <div class="path-row">
+      <div class="path-btn" onclick="openPart('part-01')"><span class="sn">1</span>Foundations</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-02')"><span class="sn">2</span>Python</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-03')"><span class="sn">3</span>Cleaning</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-04')"><span class="sn">4</span>Regression</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-05')"><span class="sn">5</span>Time-Series</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-06')"><span class="sn">6</span>Clustering</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-07')"><span class="sn">7</span>Assoc. Rules</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-08')"><span class="sn">8</span>NLP</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-10a')"><span class="sn">9</span>Neural Nets</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-10b')"><span class="sn">10</span>LLMs</div><span class="pa">›</span>
+      <div class="path-btn" onclick="openPart('part-09')"><span class="sn">11</span>Job Readiness</div>
     </div>
   </div>
 
-  <!-- REALM 1: FOUNDATIONS -->
-  <div class="realm">
-    <div class="realm-header">
-      <span class="realm-icon">🏗️</span>
-      <div>
-        <div class="realm-label">Realm 1</div>
-        <div class="realm-title">Foundations — The Toolkit</div>
-      </div>
-      <div class="realm-desc">SQL, Python, Excel — how the tools fit together and when to use each</div>
-    </div>
-    <div class="part-cards">
-      <div class="part-card" onclick="openPart('part-01')">
-        <div class="part-card-top"><span class="part-tag tag-blue">Intro</span><span class="part-num-label">Parts 0–1</span></div>
-        <div class="part-card-name">Course Intro & Analytics Foundations</div>
-        <div class="part-card-desc">What data analytics is, the SQL→Python→Excel workflow, tool selection, math foundations</div>
-      </div>
-      <div class="part-card" onclick="openPart('part-02')">
-        <div class="part-card-top"><span class="part-tag tag-green">Tool</span><span class="part-num-label">Part 2</span></div>
-        <div class="part-card-name">Python Toolkit</div>
-        <div class="part-card-desc">pandas, NumPy, Matplotlib, Seaborn — the core data stack from scratch</div>
-      </div>
-      <div class="part-card" onclick="openPart('part-03')">
-        <div class="part-card-top"><span class="part-tag tag-green">Tool</span><span class="part-num-label">Part 3</span></div>
-        <div class="part-card-name">Data Cleaning</div>
-        <div class="part-card-desc">Missing values, outliers, type fixing, feature engineering — raw data → model-ready</div>
-      </div>
-      <div class="part-card" onclick="openPart('part-11')">
-        <div class="part-card-top"><span class="part-tag tag-green">Bridge</span><span class="part-num-label">Part 11</span></div>
-        <div class="part-card-name">AN300 Integration</div>
-        <div class="part-card-desc">Connects this course to AN300 concepts — probability, distributions, statistical thinking</div>
-      </div>
-    </div>
-  </div>
+  <!-- TIMELINE TRACK -->
+  <div class="track">
 
-  <!-- REALM 2: MODELING -->
-  <div class="realm">
-    <div class="realm-header">
-      <span class="realm-icon">📈</span>
-      <div>
-        <div class="realm-label">Realm 2</div>
-        <div class="realm-title">Statistical Modeling</div>
+    <!-- PHASE 1: FOUNDATIONS -->
+    <div class="phase">
+      <div class="phase-label">
+        <div class="phase-label-inner"><span class="phase-emoji">🏗️</span>Foundations</div>
       </div>
-      <div class="realm-desc">Build and interpret models — regression, time-series, inference</div>
+      <div class="spine-col">
+        <div class="spine-dot"></div>
+        <div class="spine-line"></div>
+      </div>
+      <div class="phase-cards">
+        <div class="card" onclick="openPart('part-01')">
+          <div class="card-num">Parts 0–1</div>
+          <div class="card-name">Course Intro &amp; Analytics Foundations</div>
+          <span class="card-tag t-blue">Start Here</span>
+        </div>
+        <div class="card" onclick="openPart('part-02')">
+          <div class="card-num">Part 2</div>
+          <div class="card-name">Python Toolkit</div>
+          <span class="card-tag t-green">pandas · NumPy</span>
+        </div>
+        <div class="card" onclick="openPart('part-03')">
+          <div class="card-num">Part 3</div>
+          <div class="card-name">Data Cleaning</div>
+          <span class="card-tag t-green">Raw → Model-Ready</span>
+        </div>
+        <div class="card" onclick="openPart('part-11')">
+          <div class="card-num">Part 11</div>
+          <div class="card-name">AN300 Integration</div>
+          <span class="card-tag t-muted">Stats Bridge</span>
+        </div>
+      </div>
     </div>
-    <div class="part-cards">
-      <div class="part-card" onclick="openPart('part-04')">
-        <div class="part-card-top"><span class="part-tag tag-orange">Model</span><span class="part-num-label">Part 4</span></div>
-        <div class="part-card-name">Regression</div>
-        <div class="part-card-desc">OLS, multiple regression, ceteris paribus, R², diagnostics, when regression breaks</div>
-      </div>
-      <div class="part-card" onclick="openPart('part-05')">
-        <div class="part-card-top"><span class="part-tag tag-orange">Model</span><span class="part-num-label">Part 5</span></div>
-        <div class="part-card-name">Time-Series Forecasting</div>
-        <div class="part-card-desc">Trend/seasonality decomposition, ARIMA, MA models, backtesting forecasts</div>
-      </div>
-      <div class="part-card" onclick="openPart('part-12')">
-        <div class="part-card-top"><span class="part-tag tag-orange">Model</span><span class="part-num-label">Part 12</span></div>
-        <div class="part-card-name">Model Selection</div>
-        <div class="part-card-desc">Cross-validation, bias-variance tradeoff, AIC/BIC, choosing the right model</div>
-      </div>
-      <div class="part-card" onclick="openPart('part-13')">
-        <div class="part-card-top"><span class="part-tag tag-orange">Stats</span><span class="part-num-label">Part 13</span></div>
-        <div class="part-card-name">Statistical Inference</div>
-        <div class="part-card-desc">Hypothesis testing, p-values, confidence intervals, t-tests, ANOVA</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- REALM 3: ML METHODS -->
-  <div class="realm">
-    <div class="realm-header">
-      <span class="realm-icon">🤖</span>
-      <div>
-        <div class="realm-label">Realm 3</div>
-        <div class="realm-title">Machine Learning Methods</div>
+    <!-- PHASE 2: STATISTICAL MODELING -->
+    <div class="phase">
+      <div class="phase-label">
+        <div class="phase-label-inner"><span class="phase-emoji">📈</span>Statistical Modeling</div>
       </div>
-      <div class="realm-desc">Unsupervised and pattern-finding techniques</div>
+      <div class="spine-col">
+        <div class="spine-dot" style="background:var(--accent3);box-shadow:0 0 8px rgba(245,158,69,0.4)"></div>
+        <div class="spine-line"></div>
+      </div>
+      <div class="phase-cards">
+        <div class="card" onclick="openPart('part-04')">
+          <div class="card-num">Part 4</div>
+          <div class="card-name">Regression</div>
+          <span class="card-tag t-orange">OLS · R²</span>
+        </div>
+        <div class="card" onclick="openPart('part-05')">
+          <div class="card-num">Part 5</div>
+          <div class="card-name">Time-Series Forecasting</div>
+          <span class="card-tag t-orange">ARIMA · Seasonal</span>
+        </div>
+        <div class="card" onclick="openPart('part-12')">
+          <div class="card-num">Part 12</div>
+          <div class="card-name">Model Selection</div>
+          <span class="card-tag t-orange">Cross-Validation</span>
+        </div>
+        <div class="card" onclick="openPart('part-13')">
+          <div class="card-num">Part 13</div>
+          <div class="card-name">Statistical Inference</div>
+          <span class="card-tag t-orange">Hypothesis Testing</span>
+        </div>
+      </div>
     </div>
-    <div class="part-cards">
-      <div class="part-card" onclick="openPart('part-06')">
-        <div class="part-card-top"><span class="part-tag tag-orange">ML</span><span class="part-num-label">Part 6</span></div>
-        <div class="part-card-name">Clustering</div>
-        <div class="part-card-desc">K-means, hierarchical clustering, choosing k, interpreting cluster profiles</div>
-      </div>
-      <div class="part-card" onclick="openPart('part-07')">
-        <div class="part-card-top"><span class="part-tag tag-orange">ML</span><span class="part-num-label">Part 7</span></div>
-        <div class="part-card-name">Association Rules</div>
-        <div class="part-card-desc">Market basket analysis, Apriori, support/confidence/lift — finding hidden patterns</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- REALM 4: NLP -->
-  <div class="realm">
-    <div class="realm-header">
-      <span class="realm-icon">💬</span>
-      <div>
-        <div class="realm-label">Realm 4</div>
-        <div class="realm-title">Natural Language Processing</div>
+    <!-- PHASE 3: MACHINE LEARNING -->
+    <div class="phase">
+      <div class="phase-label">
+        <div class="phase-label-inner"><span class="phase-emoji">🤖</span>Machine Learning</div>
       </div>
-      <div class="realm-desc">Text as data — from tokenization to sentiment to embeddings</div>
+      <div class="spine-col">
+        <div class="spine-dot" style="background:var(--accent3);box-shadow:0 0 8px rgba(245,158,69,0.4)"></div>
+        <div class="spine-line"></div>
+      </div>
+      <div class="phase-cards">
+        <div class="card" onclick="openPart('part-06')">
+          <div class="card-num">Part 6</div>
+          <div class="card-name">Clustering</div>
+          <span class="card-tag t-orange">K-Means · Hierarchical</span>
+        </div>
+        <div class="card" onclick="openPart('part-07')">
+          <div class="card-num">Part 7</div>
+          <div class="card-name">Association Rules</div>
+          <span class="card-tag t-orange">Apriori · Lift</span>
+        </div>
+      </div>
     </div>
-    <div class="part-cards">
-      <div class="part-card" onclick="openPart('part-08')">
-        <div class="part-card-top"><span class="part-tag tag-pink">NLP</span><span class="part-num-label">Part 8</span></div>
-        <div class="part-card-name">NLP Foundations</div>
-        <div class="part-card-desc">Tokenization, TF-IDF, sentiment analysis, topic modeling with LDA</div>
-      </div>
-      <div class="part-card" onclick="openPart('part-08b')">
-        <div class="part-card-top"><span class="part-tag tag-pink">NLP Lab</span><span class="part-num-label">Part 8b</span></div>
-        <div class="part-card-name">Advanced NLP Lab</div>
-        <div class="part-card-desc">Embeddings, cosine similarity, clustering text — hands-on with real data</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- REALM 5: AI -->
-  <div class="realm">
-    <div class="realm-header">
-      <span class="realm-icon">🧠</span>
-      <div>
-        <div class="realm-label">Realm 5</div>
-        <div class="realm-title">AI & Deep Learning</div>
+    <!-- PHASE 4: NLP -->
+    <div class="phase">
+      <div class="phase-label">
+        <div class="phase-label-inner"><span class="phase-emoji">💬</span>NLP</div>
       </div>
-      <div class="realm-desc">How neural networks learn and what LLMs actually are under the hood</div>
+      <div class="spine-col">
+        <div class="spine-dot" style="background:var(--accent4);box-shadow:0 0 8px rgba(232,121,160,0.4)"></div>
+        <div class="spine-line"></div>
+      </div>
+      <div class="phase-cards">
+        <div class="card" onclick="openPart('part-08')">
+          <div class="card-num">Part 8</div>
+          <div class="card-name">NLP Foundations</div>
+          <span class="card-tag t-pink">TF-IDF · Sentiment</span>
+        </div>
+        <div class="card" onclick="openPart('part-08b')">
+          <div class="card-num">Part 8b</div>
+          <div class="card-name">Advanced NLP Lab</div>
+          <span class="card-tag t-pink">Embeddings · Vectors</span>
+        </div>
+      </div>
     </div>
-    <div class="part-cards">
-      <div class="part-card" onclick="openPart('part-10a')">
-        <div class="part-card-top"><span class="part-tag tag-pink">AI</span><span class="part-num-label">Part 10a</span></div>
-        <div class="part-card-name">How Neural Networks Learn</div>
-        <div class="part-card-desc">Perceptrons, backpropagation, gradient descent, activation functions — built from intuition up</div>
-      </div>
-      <div class="part-card" onclick="openPart('part-10b')">
-        <div class="part-card-top"><span class="part-tag tag-pink">AI</span><span class="part-num-label">Part 10b</span></div>
-        <div class="part-card-name">What Really Is an LLM</div>
-        <div class="part-card-desc">Transformers, attention, tokens, temperature — how ChatGPT/Claude actually work</div>
-      </div>
-    </div>
-  </div>
 
-  <!-- REALM 6: CAREER + REFERENCE -->
-  <div class="realm">
-    <div class="realm-header">
-      <span class="realm-icon">🎯</span>
-      <div>
-        <div class="realm-label">Realm 6</div>
-        <div class="realm-title">Career & Reference</div>
+    <!-- PHASE 5: AI & DEEP LEARNING -->
+    <div class="phase">
+      <div class="phase-label">
+        <div class="phase-label-inner"><span class="phase-emoji">🧠</span>AI &amp; Deep Learning</div>
       </div>
-      <div class="realm-desc">Job readiness, formulas, glossary, code library</div>
+      <div class="spine-col">
+        <div class="spine-dot" style="background:var(--accent4);box-shadow:0 0 8px rgba(232,121,160,0.4)"></div>
+        <div class="spine-line"></div>
+      </div>
+      <div class="phase-cards">
+        <div class="card" onclick="openPart('part-10a')">
+          <div class="card-num">Part 10a</div>
+          <div class="card-name">How Neural Networks Learn</div>
+          <span class="card-tag t-pink">Backprop · Gradient</span>
+        </div>
+        <div class="card" onclick="openPart('part-10b')">
+          <div class="card-num">Part 10b</div>
+          <div class="card-name">What Really Is an LLM</div>
+          <span class="card-tag t-pink">Transformers · Attention</span>
+        </div>
+      </div>
     </div>
-    <div class="part-cards">
-      <div class="part-card" onclick="openPart('part-09')">
-        <div class="part-card-top"><span class="part-tag tag-blue">Career</span><span class="part-num-label">Part 9</span></div>
-        <div class="part-card-name">Job Readiness</div>
-        <div class="part-card-desc">Interview prep, portfolio projects, resume tips, what analytics roles actually do</div>
+
+    <!-- PHASE 6: CAREER & REFERENCE -->
+    <div class="phase">
+      <div class="phase-label">
+        <div class="phase-label-inner"><span class="phase-emoji">🎯</span>Career &amp; Reference</div>
       </div>
-      <div class="part-card" onclick="openPart('appendix')">
-        <div class="part-card-top"><span class="part-tag tag-muted">Ref</span><span class="part-num-label">Appendix</span></div>
-        <div class="part-card-name">Appendix</div>
-        <div class="part-card-desc">Glossary, formula reference, source error register, source map, code library</div>
+      <div class="spine-col">
+        <div class="spine-dot" style="background:var(--accent2);box-shadow:0 0 8px rgba(86,217,176,0.4)"></div>
+        <div class="spine-line last"></div>
+      </div>
+      <div class="phase-cards">
+        <div class="card" onclick="openPart('part-09')">
+          <div class="card-num">Part 9</div>
+          <div class="card-name">Job Readiness</div>
+          <span class="card-tag t-green">Interviews · Portfolio</span>
+        </div>
+        <div class="card" onclick="openPart('appendix')">
+          <div class="card-num">Appendix</div>
+          <div class="card-name">Reference &amp; Glossary</div>
+          <span class="card-tag t-muted">Formulas · Code</span>
+        </div>
       </div>
     </div>
-  </div>
 
-</div><!-- /home -->
+  </div><!-- /track -->
+</div><!-- /homeroom -->
 
-<!-- PART VIEWER OVERLAY -->
+<!-- PART FRAME OVERLAY -->
 <div class="part-frame" id="part-frame">
   <div class="frame-bar">
     <button class="frame-back" onclick="closePart()">← Back to Course</button>
@@ -17690,16 +17654,11 @@ function openPart(id) {
   iframe.src = url;
   document.getElementById('frame-title').textContent = LABELS[id] || id;
   document.getElementById('part-frame').classList.add('active');
-  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
-  document.querySelectorAll('.nav-item').forEach(el => {
-    if (el.textContent.trim() === (LABELS[id] || '')) el.classList.add('active');
-  });
 }
 
 function closePart() {
   document.getElementById('part-frame').classList.remove('active');
   document.getElementById('part-iframe').src = 'about:blank';
-  document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active'));
 }
 </script>
 </body>
