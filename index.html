@@ -3,129 +3,103 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
-<title>AN 306 · Course Bundle</title>
-<script>
-// Force cache bust — redirect to versioned URL if not already there
-if (!location.search.includes('v=3')) {
-  location.replace(location.pathname + '?v=3');
-}
-</script>
+<title>AN 306 · Course Map</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#0b0d1a;color:#e2e8f0;min-height:100vh}
 
-/* ── TOP NAV ── */
-.topnav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:#0f1120;border-bottom:1px solid #1e2240;position:sticky;top:0;z-index:10}
-.topnav-brand{font-size:15px;font-weight:700;color:#7c8ff5;letter-spacing:.02em}
-.topnav-sub{font-size:12px;color:#5a6480;margin-top:1px}
+/* NAV */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 28px;background:#0f1120;border-bottom:1px solid #1e2240;position:sticky;top:0;z-index:10}
+.nav-brand{font-size:15px;font-weight:700;color:#7c8ff5}
+.nav-sub{font-size:11px;color:#5a6480;margin-top:1px}
 
-/* ── PAGE ── */
+/* PAGE */
 .page{max-width:1100px;margin:0 auto;padding:36px 24px 80px}
 
-/* ── HERO ── */
+/* HERO */
 .hero{text-align:center;margin-bottom:40px}
-.hero h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,#7c8ff5,#56d9b0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
+.hero h1{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,#7c8ff5,#56d9b0);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px}
 .hero p{color:#7a8499;font-size:14px;max-width:520px;margin:0 auto}
 
-/* ── SECTION HEADERS ── */
+/* READING ORDER */
+.order-box{background:#131627;border:1px solid #1e2240;border-radius:12px;padding:16px 20px;margin-bottom:36px}
+.order-box h3{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#5a6480;margin-bottom:12px}
+.order-steps{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+.step{background:#1a1e35;border:1px solid #252a45;border-radius:8px;padding:5px 12px;font-size:12px;font-weight:600;color:#cbd5e1;cursor:pointer;transition:all .15s;white-space:nowrap}
+.step:hover{background:#252a45;border-color:#7c8ff5;color:#7c8ff5}
+.arrow{color:#2a3050;font-size:11px}
+
+/* SECTION */
 .section-label{display:flex;align-items:center;gap:10px;margin:32px 0 14px;padding-bottom:8px;border-bottom:1px solid #1e2240}
 .section-label .emoji{font-size:18px}
-.section-label h2{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#5a6480}
-.section-label .badge{background:#1e2240;color:#7a8499;font-size:11px;padding:2px 8px;border-radius:20px}
+.section-label h2{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#5a6480}
+.section-label .badge{background:#1e2240;color:#7a8499;font-size:11px;padding:2px 8px;border-radius:20px;margin-left:auto}
 
-/* ── GRID ── */
+/* GRID */
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
 
-/* ── CARD ── */
-.card{background:#131627;border:1px solid #1e2240;border-radius:12px;padding:16px 15px 14px;cursor:pointer;transition:all .18s ease;position:relative;overflow:hidden}
+/* CARD */
+.card{background:#131627;border:1px solid #1e2240;border-radius:12px;padding:16px 15px 14px;cursor:pointer;transition:all .18s ease;position:relative;overflow:hidden;text-decoration:none;display:block}
 .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent,#7c8ff5);opacity:0;transition:opacity .18s}
 .card:hover{border-color:var(--accent,#7c8ff5);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.35)}
 .card:hover::before{opacity:1}
 .card-num{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent,#7c8ff5);margin-bottom:5px}
-.card-name{font-size:13px;font-weight:600;color:#cbd5e1;line-height:1.35;margin-bottom:8px}
-.card-tags{display:flex;flex-wrap:wrap;gap:4px}
-.tag{font-size:10px;padding:2px 7px;border-radius:20px;font-weight:500}
-.t-blue{background:rgba(124,143,245,.15);color:#7c8ff5}
-.t-green{background:rgba(86,217,176,.12);color:#56d9b0}
-.t-orange{background:rgba(245,158,69,.12);color:#f59e45}
-.t-pink{background:rgba(232,121,160,.12);color:#e879a0}
-.t-muted{background:rgba(90,100,128,.18);color:#7a8499}
+.card-name{font-size:13px;font-weight:600;color:#cbd5e1;line-height:1.35;margin-bottom:10px}
+.card-open{font-size:11px;color:#3a4060}
+.card:hover .card-open{color:var(--accent,#7c8ff5)}
 
-/* Phase accent colors */
+/* Phase colors */
 .phase-found  .card{--accent:#7c8ff5}
 .phase-stats  .card{--accent:#56d9b0}
 .phase-ml     .card{--accent:#f59e45}
 .phase-nlp    .card{--accent:#e879a0}
 .phase-ai     .card{--accent:#a78bfa}
 .phase-career .card{--accent:#38bdf8}
-
-/* ── READING ORDER STRIP ── */
-.reading-order{background:#131627;border:1px solid #1e2240;border-radius:12px;padding:16px 20px;margin-bottom:36px}
-.reading-order h3{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:#5a6480;margin-bottom:12px}
-.order-steps{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-.step{background:#1a1e35;border:1px solid #252a45;border-radius:8px;padding:5px 11px;font-size:12px;font-weight:600;color:#cbd5e1;cursor:pointer;transition:all .15s;white-space:nowrap}
-.step:hover{background:rgba(124,143,245,.15);border-color:#7c8ff5;color:#7c8ff5}
-.step-num{color:#5a6480;font-size:10px;margin-right:4px}
-.sep{color:#1e2240;font-size:16px;user-select:none}
-
-/* ── PART FRAME OVERLAY ── */
-.part-frame{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:100;flex-direction:column;background:#fff}
-.part-frame.active{display:flex}
-.frame-bar{display:flex;align-items:center;gap:12px;padding:8px 16px;background:#0f1120;border-bottom:1px solid #1e2240;flex-shrink:0}
-.frame-back{background:rgba(124,143,245,.15);color:#7c8ff5;border:1px solid rgba(124,143,245,.3);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px;font-weight:600}
-.frame-back:hover{background:rgba(124,143,245,.25)}
-.frame-title{color:#e2e8f0;font-size:13px;font-weight:500}
-.part-frame iframe{flex:1;border:none;width:100%}
 </style>
 </head>
 <body>
 
-<div class="topnav">
+<div class="nav">
   <div>
-    <div class="topnav-brand">📊 AN 306</div>
-    <div class="topnav-sub">Complete Course Bundle</div>
+    <div class="nav-brand">🎓 AN 306</div>
+    <div class="nav-sub">Course Map — click any card to open</div>
   </div>
 </div>
 
 <div class="page">
-
   <div class="hero">
     <h1>Course Map</h1>
-    <p>All 16 parts in one place — click any card to open it. Organized by phase from foundations to AI.</p>
+    <p>All 16 parts in one place. Click any card to open it as a full page.</p>
   </div>
 
-  <!-- READING ORDER -->
-  <div class="reading-order">
+  <div class="order-box">
     <h3>🚀 Recommended Reading Order</h3>
     <div class="order-steps">
-      <div class="step" onclick="openPart('part-01')"><span class="step-num">1</span>Foundations</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-02')"><span class="step-num">2</span>Python</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-03')"><span class="step-num">3</span>Cleaning</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-04')"><span class="step-num">4</span>Regression</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-05')"><span class="step-num">5</span>Time-Series</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-06')"><span class="step-num">6</span>Clustering</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-07')"><span class="step-num">7</span>Assoc. Rules</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-08')"><span class="step-num">8</span>NLP</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-10a')"><span class="step-num">9</span>Neural Nets</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-10b')"><span class="step-num">10</span>LLMs</div>
-      <span class="sep">›</span>
-      <div class="step" onclick="openPart('part-09')"><span class="step-num">11</span>Job Readiness</div>
+      <div class="step" onclick="openPart('part-01')">0–1 Intro</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-02')">2 Python</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-03')">3 Cleaning</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-13')">13 Stats</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-04')">4 Regression</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-05')">5 Time-Series</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-06')">6 Clustering</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-07')">7 Assoc Rules</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-12')">12 Model Select</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-08')">8 NLP</div>
+      <span class="arrow">›</span>
+      <div class="step" onclick="openPart('part-09')">9 Career</div>
     </div>
   </div>
 
-  <!-- PHASE 1: FOUNDATIONS -->
+  <!-- FOUNDATIONS -->
   <div class="phase-found">
     <div class="section-label">
       <span class="emoji">🏗️</span>
@@ -136,150 +110,141 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;backgrou
       <div class="card" onclick="openPart('part-01')">
         <div class="card-num">Parts 0–1</div>
         <div class="card-name">Course Intro &amp; Analytics Foundations</div>
-        <div class="card-tags"><span class="tag t-blue">Start Here</span></div>
+        <div class="card-open">Open →</div>
       </div>
       <div class="card" onclick="openPart('part-02')">
         <div class="card-num">Part 2</div>
         <div class="card-name">Python Toolkit</div>
-        <div class="card-tags"><span class="tag t-green">pandas</span><span class="tag t-green">NumPy</span></div>
+        <div class="card-open">Open →</div>
       </div>
       <div class="card" onclick="openPart('part-03')">
         <div class="card-num">Part 3</div>
         <div class="card-name">Data Cleaning</div>
-        <div class="card-tags"><span class="tag t-green">Raw → Model-Ready</span></div>
+        <div class="card-open">Open →</div>
       </div>
       <div class="card" onclick="openPart('part-11')">
         <div class="card-num">Part 11</div>
         <div class="card-name">AN300 Integration</div>
-        <div class="card-tags"><span class="tag t-muted">Stats Bridge</span></div>
+        <div class="card-open">Open →</div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 2: STATISTICAL MODELING -->
+  <!-- STATISTICS -->
   <div class="phase-stats">
     <div class="section-label">
-      <span class="emoji">📈</span>
-      <h2>Statistical Modeling</h2>
-      <span class="badge">Parts 4–5 · 12–13</span>
+      <span class="emoji">📊</span>
+      <h2>Statistics</h2>
+      <span class="badge">Parts 4, 13</span>
     </div>
     <div class="grid">
-      <div class="card" onclick="openPart('part-04')">
-        <div class="card-num">Part 4</div>
-        <div class="card-name">Regression</div>
-        <div class="card-tags"><span class="tag t-green">Linear · Logistic</span></div>
-      </div>
-      <div class="card" onclick="openPart('part-05')">
-        <div class="card-num">Part 5</div>
-        <div class="card-name">Time-Series Forecasting</div>
-        <div class="card-tags"><span class="tag t-green">ARIMA · Trends</span></div>
-      </div>
-      <div class="card" onclick="openPart('part-12')">
-        <div class="card-num">Part 12</div>
-        <div class="card-name">Model Selection</div>
-        <div class="card-tags"><span class="tag t-muted">Eval Metrics</span></div>
-      </div>
       <div class="card" onclick="openPart('part-13')">
         <div class="card-num">Part 13</div>
         <div class="card-name">Statistical Inference</div>
-        <div class="card-tags"><span class="tag t-muted">Hypothesis Testing</span></div>
+        <div class="card-open">Open →</div>
+      </div>
+      <div class="card" onclick="openPart('part-04')">
+        <div class="card-num">Part 4</div>
+        <div class="card-name">Regression</div>
+        <div class="card-open">Open →</div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 3: ML -->
+  <!-- MACHINE LEARNING -->
   <div class="phase-ml">
     <div class="section-label">
       <span class="emoji">🤖</span>
       <h2>Machine Learning</h2>
-      <span class="badge">Parts 6–7</span>
+      <span class="badge">Parts 5–7, 12</span>
     </div>
     <div class="grid">
+      <div class="card" onclick="openPart('part-05')">
+        <div class="card-num">Part 5</div>
+        <div class="card-name">Time-Series Forecasting</div>
+        <div class="card-open">Open →</div>
+      </div>
       <div class="card" onclick="openPart('part-06')">
         <div class="card-num">Part 6</div>
         <div class="card-name">Clustering</div>
-        <div class="card-tags"><span class="tag t-orange">K-Means · DBSCAN</span></div>
+        <div class="card-open">Open →</div>
       </div>
       <div class="card" onclick="openPart('part-07')">
         <div class="card-num">Part 7</div>
         <div class="card-name">Association Rules</div>
-        <div class="card-tags"><span class="tag t-orange">Market Basket</span></div>
+        <div class="card-open">Open →</div>
+      </div>
+      <div class="card" onclick="openPart('part-12')">
+        <div class="card-num">Part 12</div>
+        <div class="card-name">Model Selection</div>
+        <div class="card-open">Open →</div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 4: NLP -->
+  <!-- NLP -->
   <div class="phase-nlp">
     <div class="section-label">
-      <span class="emoji">💬</span>
+      <span class="emoji">📝</span>
       <h2>NLP</h2>
-      <span class="badge">Parts 8–8b</span>
+      <span class="badge">Parts 8, 8b</span>
     </div>
     <div class="grid">
       <div class="card" onclick="openPart('part-08')">
         <div class="card-num">Part 8</div>
         <div class="card-name">NLP Foundations</div>
-        <div class="card-tags"><span class="tag t-pink">Text Analysis</span></div>
+        <div class="card-open">Open →</div>
       </div>
       <div class="card" onclick="openPart('part-08b')">
         <div class="card-num">Part 8b</div>
         <div class="card-name">Advanced NLP Lab</div>
-        <div class="card-tags"><span class="tag t-pink">Sentiment · Topics</span></div>
+        <div class="card-open">Open →</div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 5: AI -->
+  <!-- AI / LLMs -->
   <div class="phase-ai">
     <div class="section-label">
-      <span class="emoji">🧠</span>
-      <h2>AI &amp; Deep Learning</h2>
-      <span class="badge">Parts 10a–10b</span>
+      <span class="emoji">✨</span>
+      <h2>AI / LLMs</h2>
+      <span class="badge">Parts 10a, 10b</span>
     </div>
     <div class="grid">
       <div class="card" onclick="openPart('part-10a')">
         <div class="card-num">Part 10a</div>
         <div class="card-name">How Neural Networks Learn</div>
-        <div class="card-tags"><span class="tag t-orange">Backprop · Weights</span></div>
+        <div class="card-open">Open →</div>
       </div>
       <div class="card" onclick="openPart('part-10b')">
         <div class="card-num">Part 10b</div>
         <div class="card-name">What Really Is an LLM</div>
-        <div class="card-tags"><span class="tag t-orange">Transformers · GPT</span></div>
+        <div class="card-open">Open →</div>
       </div>
     </div>
   </div>
 
-  <!-- PHASE 6: CAREER & REFERENCE -->
+  <!-- CAREER -->
   <div class="phase-career">
     <div class="section-label">
-      <span class="emoji">🎯</span>
-      <h2>Career &amp; Reference</h2>
-      <span class="badge">Part 9 · Appendix</span>
+      <span class="emoji">💼</span>
+      <h2>Career &amp; Extras</h2>
+      <span class="badge">Parts 9, Appendix</span>
     </div>
     <div class="grid">
       <div class="card" onclick="openPart('part-09')">
         <div class="card-num">Part 9</div>
         <div class="card-name">Job Readiness</div>
-        <div class="card-tags"><span class="tag t-blue">Portfolio · Interviews</span></div>
+        <div class="card-open">Open →</div>
       </div>
       <div class="card" onclick="openPart('appendix')">
         <div class="card-num">Appendix</div>
-        <div class="card-name">Glossary, Formulas &amp; Code Library</div>
-        <div class="card-tags"><span class="tag t-muted">Reference</span></div>
+        <div class="card-name">Reference &amp; Resources</div>
+        <div class="card-open">Open →</div>
       </div>
     </div>
   </div>
 
-</div><!-- /page -->
-
-<!-- PART FRAME OVERLAY -->
-<div class="part-frame" id="part-frame">
-  <div class="frame-bar">
-    <button class="frame-back" onclick="closePart()">← Back to Course</button>
-    <span class="frame-title" id="frame-title"></span>
-  </div>
-  <iframe id="part-iframe" src="about:blank"></iframe>
 </div>
 
 <script>
@@ -11883,6 +11848,7 @@ window.addEventListener('scroll', () => {
  * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 (()=>{var ad=Object.create;var{getPrototypeOf:id,defineProperty:ke,getOwnPropertyNames:Tt,getOwnPropertyDescriptor:sd}=Object,nt=Object.prototype.hasOwnProperty;function Nt(e){return this[e]}var od,cd,ld=(e,t,n)=>{var r=e!=null&&typeof e==="object";if(r){var i=t?od??=new WeakMap:cd??=new WeakMap,o=i.get(e);if(o)return o}n=e!=null?ad(id(e)):{};
+
 const LABELS = {"part-01": "Parts 0–1: Course Intro & Analytics Foundations", "part-02": "Part 2: Python Toolkit", "part-03": "Part 3: Data Cleaning", "part-04": "Part 4: Regression", "part-05": "Part 5: Time-Series Forecasting", "part-06": "Part 6: Clustering", "part-07": "Part 7: Association Rules", "part-08": "Part 8: NLP", "part-08b": "Part 8b: Advanced NLP Lab", "part-09": "Part 9: Job Readiness", "part-10a": "Part 10a: How Neural Networks Learn", "part-10b": "Part 10b: What Really Is an LLM", "part-11": "Part 11: AN300 Integration", "part-12": "Part 12: Model Selection", "part-13": "Part 13: Statistical Inference", "appendix": "Appendix"};
 
 
@@ -11895,13 +11861,15 @@ function openPart(id) {
   iframe.src = url;
   document.getElementById('frame-title').textContent = LABELS[id] || id;
   document.getElementById('part-frame').classList.add('active');
-}
+};
 
-function closePart() {
-  document.getElementById('part-frame').classList.remove('active');
-  document.getElementById('part-iframe').src = 'about:blank';
+function openPart(id) {
+  const html = PARTS[id];
+  if (!html) { alert('Part not found: ' + id); return; }
+  const blob = new Blob([html], {type: 'text/html'});
+  const url = URL.createObjectURL(blob);
+  window.open(url, '_blank');
 }
-
 </script>
 </body>
 </html>
