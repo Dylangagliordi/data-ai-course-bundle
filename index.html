@@ -231,14 +231,14 @@ const PARTS = {
 body{font-family:-apple-system,BlinkMacSystemFont,"Inter","Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.72;font-size:15px}
 
 /* ── NAV ── */
-.sidenav{position:fixed;top:0;left:0;width:260px;height:100vh;background:var(--surface);border-right:1px solid var(--border);overflow-y:auto;padding:20px 0;z-index:100}
-.sidenav h1{font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);padding:0 20px 14px;border-bottom:1px solid var(--border);margin-bottom:10px}
+.side
+.side
 .nav-part{margin-bottom:4px}
 .nav-part-title{display:flex;align-items:center;gap:8px;padding:7px 20px;font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;cursor:pointer;user-select:none}
 .nav-part-title:hover{color:var(--text)}
 .nav-ch{display:block;padding:5px 20px 5px 36px;font-size:12px;color:var(--dim);text-decoration:none;border-left:2px solid transparent;transition:.15s}
 .nav-ch:hover,.nav-ch.active{color:var(--accent);border-left-color:var(--accent);background:rgba(108,142,247,.07)}
-.main{margin-left:260px;padding:0}
+.main{padding:0}
 
 /* ── HERO ── */
 .hero{background:linear-gradient(135deg,#0d1b4b 0%,#1a0533 55%,#0d2a1a 100%);padding:60px 60px 48px;border-bottom:1px solid var(--border)}
@@ -343,7 +343,7 @@ tr:nth-child(even) td{background:rgba(255,255,255,.02)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
-  .sidenav{display:none}
+  .side
   .main{margin-left:0}
   .content{padding:0 24px 80px}
   .hero{padding:40px 24px 36px}
@@ -358,737 +358,7 @@ tr:nth-child(even) td{background:rgba(255,255,255,.02)}
 </div>
 
 <!-- ══════════════════ SIDENAV ══════════════════ -->
-<nav class="sidenav">
-  <h1>AN 306 · Full Course</h1>
-  <div class="nav-part">
-    <div class="nav-part-title">◆ Part 0 · Orientation</div>
-    <a class="nav-ch" href="#m0-1">0.1 What is data analytics?</a>
-    <a class="nav-ch" href="#m0-2">0.2 Supervised vs. Unsupervised</a>
-    <a class="nav-ch" href="#m0-3">0.3 Tools setup</a>
-    <a class="nav-ch" href="#m0-4">0.4 AI as a learning tool</a>
-    <a class="nav-ch" href="#m0-5">0.5 Course datasets</a>
-    <a class="nav-ch" href="#m0-6">0.6 Professional development</a>
-  </div>
-  <div class="nav-part">
-    <div class="nav-part-title">◆ Part 1 · Math Foundations</div>
-    <a class="nav-ch" href="#m1-1">1.1 Data as a table</a>
-    <a class="nav-ch" href="#m1-2">1.2 Mean &amp; Median</a>
-    <a class="nav-ch" href="#m1-3">1.3 Variance &amp; Std Dev</a>
-    <a class="nav-ch" href="#m1-4">1.4 Vectors in space</a>
-    <a class="nav-ch" href="#m1-5">1.5 Distance metrics</a>
-    <a class="nav-ch" href="#m1-6">1.6 Why we scale</a>
-    <a class="nav-ch" href="#m1-7">1.7 Scaling methods</a>
-    <a class="nav-ch" href="#m1-7b">1.7b Log transforms</a>
-    <a class="nav-ch" href="#m1-8">1.8 Lines, slopes, SSE</a>
-    <a class="nav-ch" href="#m1-lab">1.9 🔬 Distance Lab</a>
-  </div>
-</nav>
-
-<!-- ══════════════════ MAIN ══════════════════ -->
-<div class="main">
-
-<div class="hero">
-  <div class="hero-eyebrow">AN 306 · AN 300 · Dr. Zaruba's Readings</div>
-  <h1>Data Analytics:<br>The Complete Course</h1>
-  <p class="sub">Everything from zero — clustering, regression, NLP, time-series, association rules, and four full capstone pipelines. No summaries. No shortcuts.</p>
-  <div class="hero-badges">
-    <span class="hbadge b">📘 AN306 Artifact (47 modules)</span>
-    <span class="hbadge p">📊 AN300 Artifact (5 modules)</span>
-    <span class="hbadge g">🔗 48 Docx links</span>
-    <span class="hbadge a">⚠️ 5 source errors documented &amp; corrected</span>
-  </div>
-</div>
-
-<div class="content">
-
-<!-- ════════════════════════════════
-     PART 0 · ORIENTATION
-════════════════════════════════ -->
-<div class="part-header" id="part0">
-  <div class="part-num blue">0</div>
-  <div class="part-title">Course Orientation</div>
-  <p class="part-desc">What data analytics is, the landscape of machine learning, your tools, your datasets, and how to use AI as a learning accelerator.</p>
-  <div class="part-tags">
-    <span class="ptag b">AN306</span>
-    <span class="ptag g">Docx Week 1</span>
-    <span class="ptag p">AN300</span>
-  </div>
-</div>
-
-<!-- MODULE 0.1 -->
-<div class="module" id="m0-1">
-  <div class="module-header">
-    <div class="module-num">0.1</div>
-    <div>
-      <div class="module-title">What Is Data Analytics?</div>
-      <div class="module-src">
-        <span class="src-tag an306">AN306</span>
-        <span class="src-tag an300">AN300</span>
-      </div>
-    </div>
-  </div>
-
-  <p>Data analytics is the process of <strong>examining raw data to draw conclusions</strong> about the information it contains. Those conclusions help people make better decisions — in business, healthcare, government, sports, science, and everywhere else humans collect information.</p>
-
-  <p>It's worth being precise about what analytics is and is not. Analytics is <em>not</em> about proving what you already believe. It's about letting the data show you something you didn't know. When done honestly, it surprises you at least as often as it confirms you.</p>
-
-  <h2>Four Types of Analytics</h2>
-
-  <table>
-    <tr><th>Type</th><th>Question answered</th><th>Example</th></tr>
-    <tr>
-      <td><strong>Descriptive</strong></td>
-      <td>What happened?</td>
-      <td>Revenue last quarter was $4.2M, down 8% from Q2.</td>
-    </tr>
-    <tr>
-      <td><strong>Diagnostic</strong></td>
-      <td>Why did it happen?</td>
-      <td>Revenue dropped because a major client churned in August.</td>
-    </tr>
-    <tr>
-      <td><strong>Predictive</strong></td>
-      <td>What will happen?</td>
-      <td>Based on current pipeline, Q4 revenue is forecast at $3.9M.</td>
-    </tr>
-    <tr>
-      <td><strong>Prescriptive</strong></td>
-      <td>What should we do?</td>
-      <td>Prioritize Account X — the model says they're 71% likely to churn next month.</td>
-    </tr>
-  </table>
-
-  <p>This course focuses primarily on <strong>predictive analytics</strong> — building models that forecast outcomes — with heavy use of descriptive analytics as a foundation.</p>
-
-  <h2>Why It Matters Right Now</h2>
-  <p>The labor market shift is real. The dataset at the center of this course (<span class="inline-code">US_Data_AI_Jobs_2026.csv</span>) contains 2,905 job postings scraped from U.S. job boards in 2026. The job titles, required skills, salary ranges, and location patterns in that file are your direct evidence of where the analytics job market stands. Everything you learn in this course maps directly to skills that appear in those postings.</p>
-
-  <div class="callout info">
-    <div class="callout-title">What Makes a Good Analytics Question?</div>
-    <p>A good analytics question is <strong>specific</strong> (not "how is sales?"), <strong>answerable with data you have or can get</strong>, and <strong>actionable</strong> (the answer would change a decision). "Do remote data analyst jobs pay more than on-site jobs in the South?" is a good analytics question. "How is the economy?" is not.</p>
-  </div>
-</div>
-
-<!-- MODULE 0.2 -->
-<div class="module" id="m0-2">
-  <div class="module-header">
-    <div class="module-num">0.2</div>
-    <div>
-      <div class="module-title">Supervised vs. Unsupervised Learning — The ML Taxonomy</div>
-      <div class="module-src">
-        <span class="src-tag an306">AN306</span>
-      </div>
-    </div>
-  </div>
-
-  <p>Machine learning divides cleanly into two camps based on one question: <strong>do you have labels?</strong></p>
-
-  <h2>Supervised Learning</h2>
-  <p>You have a dataset where every row has both inputs (features) and a known output (the label). The algorithm learns the mapping from inputs to outputs so it can predict the output for new, unseen rows.</p>
-
-  <p><strong>Examples from this course:</strong></p>
-  <ul>
-    <li><em>Regression</em> — predicting a numeric output (salary given years of experience, remote status, region)</li>
-    <li><em>Logistic Regression</em> — predicting a binary output (will this user churn? yes/no)</li>
-    <li><em>Time-Series Forecasting</em> — predicting next month's sales given past months' sales</li>
-  </ul>
-
-  <p>The word "supervised" comes from the idea that the correct answers are known in advance — you're training the model under supervision.</p>
-
-  <h2>Unsupervised Learning</h2>
-  <p>You have a dataset with no labels. No "right answers." The algorithm must find structure, patterns, or groups in the data entirely on its own.</p>
-
-  <p><strong>Examples from this course:</strong></p>
-  <ul>
-    <li><em>Clustering (K-Means, Hierarchical, DBSCAN)</em> — group job postings by similarity of required skills</li>
-    <li><em>Topic Modeling (LDA)</em> — discover topics in job descriptions without telling the model what topics to look for</li>
-    <li><em>Dimensionality Reduction (PCA)</em> — compress a 500-feature TF-IDF matrix into 2 dimensions for visualization</li>
-  </ul>
-
-  <table>
-    <tr><th></th><th>Supervised</th><th>Unsupervised</th></tr>
-    <tr><td><strong>Labels needed?</strong></td><td>Yes</td><td>No</td></tr>
-    <tr><td><strong>Output</strong></td><td>Prediction (numeric or class)</td><td>Structure (groups, topics, compressed features)</td></tr>
-    <tr><td><strong>Evaluation</strong></td><td>Compare to known answers (R², RMSE, accuracy)</td><td>Internal metrics (silhouette, inertia)</td></tr>
-    <tr><td><strong>Examples</strong></td><td>Regression, classification</td><td>Clustering, PCA, topic models</td></tr>
-  </table>
-
-  <div class="callout tip">
-    <div class="callout-title">💡 What "Labels" Looks Like in Practice</div>
-    <p><strong>Supervised</strong> — you have a column to predict. Every row has an answer to compare against:</p>
-    <table style="font-size:12px;margin:8px 0 10px">
-      <tr><th>job_title</th><th>years_exp</th><th>remote</th><th style="color:#fcd34d">salary_min ← label (known)</th></tr>
-      <tr><td>Data Analyst</td><td>2</td><td>Yes</td><td>$68,000</td></tr>
-      <tr><td>Sr. Data Scientist</td><td>6</td><td>No</td><td>$120,000</td></tr>
-      <tr><td>BI Analyst</td><td>1</td><td>Yes</td><td>$55,000</td></tr>
-    </table>
-    <p><strong>Unsupervised</strong> — there is no label column. The algorithm must find structure on its own:</p>
-    <table style="font-size:12px;margin:8px 0 10px">
-      <tr><th>job_title</th><th>years_exp</th><th>remote</th><th style="color:#64748b">← no label</th></tr>
-      <tr><td>Data Analyst</td><td>2</td><td>Yes</td><td><em style="color:#64748b">unknown</em></td></tr>
-      <tr><td>Sr. Data Scientist</td><td>6</td><td>No</td><td><em style="color:#64748b">unknown</em></td></tr>
-      <tr><td>BI Analyst</td><td>1</td><td>Yes</td><td><em style="color:#64748b">unknown</em></td></tr>
-    </table>
-    <p>Clustering looks at the <em>shape</em> of those rows and might separate "entry-level analyst" roles from "senior data science" roles — without ever being told what the groupings should be.</p>
-  </div>
-
-  <div class="callout tip">
-    <div class="callout-title">A Common Confusion</div>
-    <p>When a k-means model assigns your job posting to "Cluster 2," that is <strong>not</strong> a prediction. It's a grouping. There's no right answer to compare it to. That's why we use silhouette scores and interpretability to evaluate clustering, not accuracy.</p>
-  </div>
-
-  <h2>Semi-Supervised and Reinforcement Learning</h2>
-  <p>For completeness: <span class="term">semi-supervised learning</span> uses a small amount of labeled data alongside a large unlabeled dataset (useful when labeling is expensive). <span class="term">Reinforcement learning</span> trains an agent to take actions in an environment to maximize a reward — the basis of game-playing AI and robotics. This course covers supervised and unsupervised only.</p>
-</div>
-
-<!-- MODULE 0.3 -->
-<div class="module" id="m0-3">
-  <div class="module-header">
-    <div class="module-num">0.3</div>
-    <div>
-      <div class="module-title">Tools Setup — Python, Colab, and Your Workflow</div>
-      <div class="module-src">
-        <span class="src-tag docx">Docx — Colab links</span>
-        <span class="src-tag an306">AN306</span>
-      </div>
-    </div>
-  </div>
-
-  <p>Everything in this course runs in Python. You'll work in <strong>Google Colab</strong> for quick experiments and your own laptop for the presentation projects.</p>
-
-  <h2>Google Colab</h2>
-  <p>Colab gives you a Jupyter notebook that runs in the cloud. No installation needed. Free GPU access. Shareable. The professor's example notebooks are hosted there.</p>
-
-  <p>To open a notebook: go to <span class="inline-code">colab.research.google.com</span> → "New notebook" or paste a GitHub link. All code cells run sequentially. Order matters — if you define a function in cell 5 and try to call it in cell 2 before running cell 5, you'll get a NameError.</p>
-
-  <h2>The Core Libraries — What They Are and Why</h2>
-
-  <table>
-    <tr><th>Library</th><th>What it does</th><th>How you'll use it</th></tr>
-    <tr><td><strong>pandas</strong></td><td>Tabular data (DataFrames)</td><td>Load CSVs, filter rows, groupby, extract values from text</td></tr>
-    <tr><td><strong>NumPy</strong></td><td>Numeric arrays and math</td><td>Build the feature matrix X, do vectorized math</td></tr>
-    <tr><td><strong>scikit-learn</strong></td><td>Machine learning algorithms</td><td>KMeans, StandardScaler, train_test_split, Pipelines</td></tr>
-    <tr><td><strong>matplotlib / seaborn</strong></td><td>Visualization</td><td>Histograms, boxplots, scatterplots, heatmaps</td></tr>
-    <tr><td><strong>statsmodels</strong></td><td>Statistical models with detailed output</td><td>OLS regression with p-values, confidence intervals</td></tr>
-    <tr><td><strong>scipy</strong></td><td>Scientific computing</td><td>Hierarchical clustering, linkage matrices, dendrograms</td></tr>
-    <tr><td><strong>nltk</strong></td><td>Natural language processing</td><td>Stopwords, stemming, lemmatization</td></tr>
-    <tr><td><strong>sklearn.feature_extraction</strong></td><td>Text vectorization</td><td>TF-IDF matrices from raw text</td></tr>
-    <tr><td><strong>geopandas / folium</strong></td><td>Geospatial analysis</td><td>Maps, geographic clusters in P4</td></tr>
-  </table>
-
-  <h2>Your First Cell — Always Run This</h2>
-  <pre><code>import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn.preprocessing import StandardScaler
-from sklearn.cluster import KMeans
-from sklearn.metrics import silhouette_score
-import warnings
-warnings.filterwarnings('ignore')
-
-# Display settings
-pd.set_option('display.max_columns', None)
-pd.set_option('display.max_colwidth', 80)
-sns.set_theme(style='darkgrid', palette='muted')</code></pre>
-
-  <h2>Loading the Course Dataset</h2>
-  <pre><code># If you've uploaded US_Data_AI_Jobs_2026.csv to your Colab session:
-df = pd.read_csv('US_Data_AI_Jobs_2026.csv')
-print(df.shape)       # (2905, 21)
-print(df.dtypes)      # check each column's type
-print(df.isnull().sum())  # count missing values per column
-df.head(3)            # peek at the first 3 rows</code></pre>
-
-  <div class="callout success">
-    <div class="callout-title">Workflow Rule #1</div>
-    <p>Always run <span class="inline-code">df.shape</span>, <span class="inline-code">df.dtypes</span>, and <span class="inline-code">df.isnull().sum()</span> as your first three commands on any new dataset. These three lines tell you everything you need to know before you write a single line of analysis.</p>
-  </div>
-</div>
-
-<!-- MODULE 0.4 -->
-<div class="module" id="m0-4">
-  <div class="module-header">
-    <div class="module-num">0.4</div>
-    <div>
-      <div class="module-title">Using AI as a Learning Tool — Prompt Engineering</div>
-      <div class="module-src">
-        <span class="src-tag docx">Docx — Week 1 (5 PE links)</span>
-      </div>
-    </div>
-  </div>
-
-  <p>AI assistants (ChatGPT, Claude, Gemini) can accelerate your learning dramatically — but only if you use them correctly. The mistake most students make is treating them like search engines: type a vague question, copy the first answer, move on. That approach produces shallow understanding and broken code you can't debug.</p>
-
-  <p>The correct approach treats AI as a <strong>tutor that knows everything but explains nothing unless you ask well</strong>.</p>
-
-  <h2>Zero-Shot Prompting</h2>
-  <p>Give the model a task with no examples. Works for well-defined requests.</p>
-  <pre><code># Zero-shot: direct instruction
-"Explain what the silhouette score measures in k-means clustering, 
- as if I've never seen the formula before."</code></pre>
-
-  <h2>Few-Shot Prompting</h2>
-  <p>Give the model 2–3 examples of the pattern you want before asking your question. Dramatically improves consistency for structured tasks.</p>
-  <pre><code># Few-shot: examples first, then your question
-"I'm interpreting k-means cluster profiles. Here's how I described 
- two clusters so far:
- Cluster 0: 'The Entry-Level Python Analyst' — median $62k, 
-             mostly Python + SQL, 0-1 years required
- Cluster 1: 'The Senior BI Strategist' — median $105k, 
-             Tableau + SQL + leadership, 5+ years required
-
- Now describe Cluster 2 in the same style:
- Cluster 2: n=180, median salary $88k, top skills: 
-             R + Statistics + Machine Learning, 3 years required, 
-             60% remote"</code></pre>
-
-  <h2>Chain of Thought (CoT)</h2>
-  <p>Ask the model to <em>think step by step</em>. This dramatically improves math, debugging, and logical reasoning tasks because it forces the model to show its work rather than jump to an answer.</p>
-  <pre><code>"Explain step by step why my k-means silhouette score is only 0.012.
- Think through each possible reason before giving me a verdict."</code></pre>
-
-  <h2>The Most Useful Prompts for This Course</h2>
-
-  <table>
-    <tr><th>Situation</th><th>Prompt template</th></tr>
-    <tr>
-      <td>Debugging code</td>
-      <td>"Here's my Python code and the error it's producing. Explain what causes this error and fix it, then explain what you changed: [code] [error]"</td>
-    </tr>
-    <tr>
-      <td>Understanding a concept</td>
-      <td>"Explain [concept] from scratch. No jargon. Use a concrete example with real numbers."</td>
-    </tr>
-    <tr>
-      <td>Interpreting output</td>
-      <td>"Here's my [statsmodels OLS / k-means silhouette / dendrogram] output. Walk me through what each piece means."</td>
-    </tr>
-    <tr>
-      <td>Generating code</td>
-      <td>"Write Python code to [task]. I'm using [library]. Include comments explaining each step."</td>
-    </tr>
-    <tr>
-      <td>Checking your understanding</td>
-      <td>"Quiz me on [topic] with 3 questions. After I answer each one, tell me if I'm right and what I missed."</td>
-    </tr>
-  </table>
-
-  <div class="callout warn">
-    <div class="callout-title">AI Code Is Not Automatically Correct</div>
-    <p>Always run AI-generated code and verify the output makes sense. AI models confidently produce code with subtle bugs. The skills in this course — especially understanding what error metrics actually measure — will let you catch those bugs. That's part of why we build from math up, not just from copy-paste down.</p>
-  </div>
-</div>
-
-<!-- MODULE 0.5 -->
-<div class="module" id="m0-5">
-  <div class="module-header">
-    <div class="module-num">0.5</div>
-    <div>
-      <div class="module-title">The Course Datasets</div>
-      <div class="module-src">
-        <span class="src-tag an306">AN306</span>
-        <span class="src-tag docx">Docx P2 &amp; P4</span>
-      </div>
-    </div>
-  </div>
-
-  <p>Three datasets appear repeatedly in this course. Getting familiar with their structure now will save time later.</p>
-
-  <h2>US_Data_AI_Jobs_2026.csv — The Main Dataset (P4)</h2>
-  <p>2,905 job postings from U.S. job boards, scraped in 2026. The backbone of Presentation 4 and Chapter 8.</p>
-
-  <table>
-    <tr><th>Column</th><th>Type</th><th>Description</th></tr>
-    <tr><td><span class="inline-code">job_id</span></td><td>int</td><td>Unique row identifier</td></tr>
-    <tr><td><span class="inline-code">title</span></td><td>str</td><td>Job title as listed (e.g. "Senior Data Analyst – Remote")</td></tr>
-    <tr><td><span class="inline-code">company</span></td><td>str</td><td>Hiring company name</td></tr>
-    <tr><td><span class="inline-code">location</span></td><td>str</td><td>City, State or "Remote"</td></tr>
-    <tr><td><span class="inline-code">salary_min</span></td><td>float</td><td>Minimum posted salary (annual, USD)</td></tr>
-    <tr><td><span class="inline-code">salary_max</span></td><td>float</td><td>Maximum posted salary (annual, USD)</td></tr>
-    <tr><td><span class="inline-code">remote</span></td><td>bool</td><td>True if remote or hybrid</td></tr>
-    <tr><td><span class="inline-code">description_text</span></td><td>str</td><td>Full job description — raw text, used for NLP</td></tr>
-    <tr><td><span class="inline-code">required_skills</span></td><td>str</td><td>Comma-separated skills list extracted from description</td></tr>
-    <tr><td><span class="inline-code">years_exp_required</span></td><td>float</td><td>Years of experience required (NaN if not stated)</td></tr>
-    <tr><td><span class="inline-code">education_level</span></td><td>str</td><td>"Bachelor's", "Master's", "PhD", or NaN</td></tr>
-    <tr><td><span class="inline-code">industry</span></td><td>str</td><td>Industry sector (Tech, Finance, Healthcare, etc.)</td></tr>
-    <tr><td><span class="inline-code">region</span></td><td>str</td><td>US region (Northeast / Southeast / Midwest / Southwest / West)</td></tr>
-    <tr><td><span class="inline-code">lat</span> / <span class="inline-code">lon</span></td><td>float</td><td>Approximate job location coordinates (for mapping)</td></tr>
-  </table>
-
-  <div class="callout info">
-    <div class="callout-title">Key Structural Note</div>
-    <p>The <span class="inline-code">description_text</span> column is <strong>unstructured text</strong> — it's the raw job posting. Everything in Part 8 (NLP) exists to turn that messy text into numeric features the clustering algorithms can process. The <span class="inline-code">required_skills</span> column is a cleaned version that the professor extracted from descriptions — a shortcut for skill frequency analysis.</p>
-  </div>
-
-  <h2>Google Play Store Apps (P2)</h2>
-  <p>App metadata from the Google Play Store. Used in Presentation 2 for feature engineering practice.</p>
-  <ul>
-    <li><span class="inline-code">App</span> — app name</li>
-    <li><span class="inline-code">Category</span> — app category (Games, Productivity, etc.)</li>
-    <li><span class="inline-code">Rating</span> — average user rating (0–5, float)</li>
-    <li><span class="inline-code">Installs</span> — install count as a string ("10,000,000+" — requires cleaning)</li>
-    <li><span class="inline-code">Type</span> — Free vs. Paid</li>
-    <li><span class="inline-code">Price</span> — price in USD (0 for free apps)</li>
-    <li><span class="inline-code">Content Rating</span> — age appropriateness</li>
-    <li><span class="inline-code">Genres</span> — sub-genre tags</li>
-    <li><span class="inline-code">Last Updated</span>, <span class="inline-code">Current Ver</span>, <span class="inline-code">Android Ver</span></li>
-  </ul>
-
-  <p>Companion: <span class="inline-code">App_Permissions.csv</span> — per-app list of Android permissions requested (Camera, Location, Contacts, etc.). Join key: app name. Used to create the <span class="inline-code">Permission_Load</span> and <span class="inline-code">privacy_risk_score</span> features.</p>
-
-  <h2>Time-Series Stock Data (P3)</h2>
-  <p>Retrieved via <span class="inline-code">yfinance</span> (Yahoo Finance Python library). Daily OHLCV (Open, High, Low, Close, Volume) for any publicly traded ticker. The structure is always the same: DateTimeIndex rows, one column per price/volume type.</p>
-
-  <pre><code>import yfinance as yf
-ticker = yf.Ticker("AAPL")
-df = ticker.history(period="2y")   # 2 years of daily data
-print(df.head())
-# Output columns: Open, High, Low, Close, Volume, Dividends, Stock Splits</code></pre>
-</div>
-
-<!-- MODULE 0.6 -->
-<div class="module" id="m0-6">
-  <div class="module-header">
-    <div class="module-num">0.6</div>
-    <div>
-      <div class="module-title">Professional Development in Analytics</div>
-      <div class="module-src">
-        <span class="src-tag docx">Docx — Social links, ISACA</span>
-      </div>
-    </div>
-  </div>
-
-  <p>The technical skills in this course are what get you the interview. What happens after the interview depends on something else: how you present yourself, your network, and whether employers can see evidence of your work.</p>
-
-  <h2>LinkedIn for Analytics Professionals</h2>
-  <p>LinkedIn is not optional in analytics. Recruiters actively search for skills like Python, SQL, Tableau, Power BI, Machine Learning. Your profile should reflect this course:</p>
-  <ul>
-    <li><strong>Skills section:</strong> Add Python, pandas, scikit-learn, SQL, data visualization, NLP, clustering, regression after completing each part of this course.</li>
-    <li><strong>Projects section:</strong> Every presentation (P1–P4) is a project. Write a 2–3 sentence description of what you did and what you found.</li>
-    <li><strong>Headline:</strong> "Data Analytics Student | Python · SQL · Machine Learning · NLP" beats "Student at [University]."</li>
-  </ul>
-
-  <h2>Building Your Portfolio</h2>
-  <p>The four presentations in this course are portfolio-ready projects. After each one, consider:</p>
-  <ul>
-    <li>Posting the notebook on GitHub (keep the README clear and descriptive)</li>
-    <li>Writing a 300-word LinkedIn post about what you found — not what you did technically, but what insight the data revealed</li>
-    <li>Adding it to your resume as a project with 2 bullet points of measurable results</li>
-  </ul>
-
-  <h2>Industry Connections</h2>
-  <p>ISACA Kentuckiana (the Information Systems Audit and Control Association's local chapter) hosts events in the Cincinnati/Northern Kentucky region. Analytics professionals, IT auditors, cybersecurity experts, and data governance specialists attend. Free or low-cost student membership. The professional development skill in networking is showing up consistently — not just when you're job hunting.</p>
-
-  <div class="src-footer"><strong>Sources:</strong> AN306 Ch0, AN300 Module intro, Docx Week 1 (Colab links, LinkedIn, ISACA Eventbrite), Docx P2 guide (dataset structure), Docx P4 guide (jobs dataset columns)</div>
-</div>
-
-<hr class="section-div">
-
-<!-- ════════════════════════════════
-     PART 1 · MATH FOUNDATIONS
-════════════════════════════════ -->
-<div class="part-header" id="part1">
-  <div class="part-num green">1</div>
-  <div class="part-title">Math Foundations</div>
-  <p class="part-desc">The essential math behind every algorithm in this course — no shortcuts. You'll understand why the formulas are written the way they are, not just how to plug numbers in.</p>
-  <div class="part-tags">
-    <span class="ptag b">AN306 Ch1</span>
-    <span class="ptag a">Built In (corrected)</span>
-  </div>
-</div>
-
-<!-- MODULE 1.1 -->
-<div class="module" id="m1-1">
-  <div class="module-header">
-    <div class="module-num">1.1</div>
-    <div>
-      <div class="module-title">Data as a Table — Rows, Columns, and Types</div>
-      <div class="module-src">
-        <span class="src-tag an306">AN306</span>
-      </div>
-    </div>
-  </div>
-
-  <p>Every dataset in this course is a table. Understanding the anatomy of that table is not trivial — getting it wrong causes subtle bugs that take hours to debug.</p>
-
-  <h2>The Fundamental Structure</h2>
-  <ul>
-    <li>Each <strong>row</strong> (also called an <span class="term">observation</span> or <span class="term">sample</span>) represents one thing — one job posting, one app, one day of stock prices.</li>
-    <li>Each <strong>column</strong> (also called a <span class="term">feature</span> or <span class="term">variable</span>) represents one property of that thing — the salary, the title, the rating.</li>
-    <li>One special column is typically the <span class="term">target</span> (also called the label or dependent variable) — the thing you're trying to predict.</li>
-    <li>All other columns are <span class="term">features</span> (or independent variables, predictors, inputs).</li>
-  </ul>
-
-  <p>When you write this in scikit-learn convention:</p>
-  <pre><code>X = df[['years_exp', 'remote', 'region_encoded']]  # features — shape: (n_rows, n_features)
-y = df['salary_min']                                # target — shape: (n_rows,)</code></pre>
-
-  <p><span class="inline-code">X</span> is always 2-dimensional (a matrix). <span class="inline-code">y</span> is always 1-dimensional (a vector). This convention is used throughout scikit-learn, and mixing them up causes immediate errors.</p>
-
-  <h2>Data Types</h2>
-
-  <table>
-    <tr><th>Type</th><th>Description</th><th>Examples in our datasets</th><th>Operations that make sense</th></tr>
-    <tr>
-      <td><strong>Continuous numeric</strong></td>
-      <td>Real number with meaningful magnitude and ratio</td>
-      <td>salary_min, years_exp, lat/lon</td>
-      <td>Mean, SD, distance, regression</td>
-    </tr>
-    <tr>
-      <td><strong>Discrete numeric</strong></td>
-      <td>Integer counts</td>
-      <td>Number of permissions, years_exp if integer</td>
-      <td>Mean, mode, counts</td>
-    </tr>
-    <tr>
-      <td><strong>Binary / Boolean</strong></td>
-      <td>Two categories, often coded 0/1</td>
-      <td>remote (True/False)</td>
-      <td>Proportion, as a dummy in regression</td>
-    </tr>
-    <tr>
-      <td><strong>Nominal categorical</strong></td>
-      <td>Named categories with no inherent order</td>
-      <td>region, industry, education_level</td>
-      <td>Frequency counts, mode, chi-square; must encode before regression/clustering</td>
-    </tr>
-    <tr>
-      <td><strong>Ordinal categorical</strong></td>
-      <td>Ordered categories</td>
-      <td>Rating_Tier (Low/Mid/High)</td>
-      <td>Median, ranking; can encode as integers if order is consistent</td>
-    </tr>
-    <tr>
-      <td><strong>Free text</strong></td>
-      <td>Unstructured natural language</td>
-      <td>description_text, job title</td>
-      <td>NLP — TF-IDF, tokenization (Part 8)</td>
-    </tr>
-    <tr>
-      <td><strong>Datetime</strong></td>
-      <td>Timestamp</td>
-      <td>Last Updated, stock date index</td>
-      <td>Time-series analysis, age calculations (Part 5)</td>
-    </tr>
-  </table>
-
-  <div class="callout warn">
-    <div class="callout-title">The Type Mismatch Trap</div>
-    <p>The <span class="inline-code">Installs</span> column in the Google Play dataset looks numeric but is a <strong>string</strong>: <span class="inline-code">"10,000,000+"</span>. The <span class="inline-code">salary_min</span> column in the jobs dataset may contain <span class="inline-code">NaN</span> where salary was not posted. Always check <span class="inline-code">df.dtypes</span> and <span class="inline-code">df.isnull().sum()</span> immediately after loading data.</p>
-  </div>
-</div>
-
-<!-- MODULE 1.2 -->
-<div class="module" id="m1-2">
-  <div class="module-header">
-    <div class="module-num">1.2</div>
-    <div>
-      <div class="module-title">Central Tendency — Mean and Median</div>
-      <div class="module-src">
-        <span class="src-tag an306">AN306</span>
-      </div>
-    </div>
-  </div>
-
-  <p>Both mean and median summarize where the "center" of a distribution is. They give different answers, and the right choice depends on the shape of your data.</p>
-
-  <h2>The Mean (Arithmetic Average)</h2>
-
-  <div class="formula">x̄ = (x₁ + x₂ + ... + xₙ) / n = Σxᵢ / n</div>
-
-  <p>The mean minimizes the sum of squared deviations — meaning if you replace every value in a list with the mean, the total squared error is as small as possible. That's why regression uses it as a starting point.</p>
-
-  <p><strong>Weakness:</strong> The mean is sensitive to outliers. One extremely large salary can pull the mean far above where most people actually earn.</p>
-
-  <pre><code># With the jobs dataset
-mean_salary = df['salary_min'].mean()
-# Output might be ~$95,000 — but if 10 jobs pay $500k+, this is misleading</code></pre>
-
-  <h2>The Median</h2>
-  <p>The value such that 50% of observations fall below it. Sort all values, take the middle one (or average the two middle ones if n is even).</p>
-
-  <p><strong>Strength:</strong> Robust to outliers. A handful of $500k executive salaries don't move the median much.</p>
-
-  <pre><code>median_salary = df['salary_min'].median()
-# Output might be ~$78,000 — a better picture of the "typical" salary</code></pre>
-
-  <h2>When to Use Which</h2>
-
-  <table>
-    <tr><th>Use mean when...</th><th>Use median when...</th></tr>
-    <tr>
-      <td>Distribution is roughly symmetric (bell-shaped)</td>
-      <td>Distribution is skewed (long tail one side)</td>
-    </tr>
-    <tr>
-      <td>No extreme outliers</td>
-      <td>Outliers are present or expected</td>
-    </tr>
-    <tr>
-      <td>You need mathematical properties (e.g., regression, expected value)</td>
-      <td>You want to describe the "typical" case to a non-technical audience</td>
-    </tr>
-    <tr>
-      <td>Example: average temperature this week</td>
-      <td>Example: typical U.S. household income, typical home price</td>
-    </tr>
-  </table>
-
-  <div class="callout info">
-    <div class="callout-title">Exam Insight</div>
-    <p>Salary, home prices, and income are almost always <strong>right-skewed</strong> (most people earn moderate amounts; a few earn enormous amounts). For these variables, the median is almost always a better description of "typical" than the mean. If a professor asks which measure to use for salary, the answer is median.</p>
-  </div>
-
-  <div class="callout tip">
-    <div class="callout-title">🔬 From Your Code (data-science-job-market-analysis)</div>
-    <p>In a Glassdoor analysis of 672 data science job postings, using the <strong>mean salary</strong> gave a misleadingly high "average" because a handful of senior/principal roles pulled the number up. The correct framing for "what does a junior analyst typically earn in this industry?" was the <strong>median salary by industry</strong> — it's not affected by the $400K staff-scientist outliers at FAANG companies. This is exactly why salary analysis always uses median.</p>
-  </div>
-
-  <h2>Mode</h2>
-  <p>The most frequently occurring value. Only useful for discrete or categorical data. For the region column, the mode might be "Northeast" if that region has the most job postings. For continuous data, mode is essentially meaningless (every value may be unique).</p>
-</div>
-
-<!-- MODULE 1.3 -->
-<div class="module" id="m1-3">
-  <div class="module-header">
-    <div class="module-num">1.3</div>
-    <div>
-      <div class="module-title">Spread — Variance and Standard Deviation</div>
-      <div class="module-src">
-        <span class="src-tag an306">AN306</span>
-      </div>
-    </div>
-  </div>
-
-  <p>The mean tells you where the center is. Variance and standard deviation tell you how spread out the data is around that center.</p>
-
-  <h2>Variance</h2>
-  <p>Variance measures the average squared deviation from the mean. We square the deviations so that positive and negative deviations don't cancel out.</p>
-
-  <div class="formula">s² = Σ(xᵢ - x̄)² / (n - 1)</div>
-
-  <p>Why <span class="inline-code">n - 1</span> instead of <span class="inline-code">n</span>? This is <span class="term">Bessel's correction</span>. When you estimate variance from a sample (not the full population), dividing by <span class="inline-code">n - 1</span> gives an unbiased estimate. With <span class="inline-code">n</span>, you'd systematically underestimate the true population variance. This detail matters for statistical inference; for clustering and machine learning, it rarely changes results.</p>
-
-  <p><strong>Units problem:</strong> Variance is in squared units. If your data is in dollars, variance is in dollars². That makes it hard to interpret directly.</p>
-
-  <div class="callout tip">
-    <div class="callout-title">💡 Variance by Hand — 5 Steps</div>
-    <p>Five job salaries (in $K): <strong>60, 70, 80, 90, 100</strong>. What is the variance?</p>
-    <p><strong>Step 1 — Mean:</strong> (60+70+80+90+100) / 5 = <strong>80</strong></p>
-    <p><strong>Step 2 — Deviations from mean:</strong> −20, −10, 0, +10, +20</p>
-    <p><strong>Step 3 — Square each deviation:</strong> 400, 100, 0, 100, 400</p>
-    <p><strong>Step 4 — Sum of squared deviations:</strong> 400+100+0+100+400 = <strong>1,000</strong></p>
-    <p><strong>Step 5 — Divide by (n−1) = 4:</strong> 1,000 / 4 = <strong>250</strong></p>
-    <p>Standard deviation = √250 ≈ <strong>$15.8K</strong>. So a "typical" salary in this list is about $15,800 above or below the $80K mean. Squaring in Step 3 is what prevents +20 and −20 from canceling each other out.</p>
-  </div>
-
-  <h2>Standard Deviation</h2>
-  <p>Take the square root of variance. Now you're back in the original units.</p>
-
-  <div class="formula">s = √(s²) = √[ Σ(xᵢ - x̄)² / (n - 1) ]</div>
-
-  <p>Standard deviation has an intuitive interpretation: it's the typical distance of a data point from the mean.</p>
-
-  <pre><code>salary_mean = df['salary_min'].mean()   # e.g., 95000
-salary_std  = df['salary_min'].std()    # e.g., 28000
-
-# Interpretation: a typical job posting's salary is about $28,000
-# above or below the mean salary of $95,000.
-# A salary of $123,000 is 1 standard deviation above the mean.
-# A salary of $67,000 is 1 standard deviation below.</code></pre>
-
-  <h2>The 68-95-99.7 Rule</h2>
-  <p>For roughly normal (bell-shaped) distributions:</p>
-  <ul>
-    <li>About <strong>68%</strong> of observations fall within 1 SD of the mean</li>
-    <li>About <strong>95%</strong> fall within 2 SDs</li>
-    <li>About <strong>99.7%</strong> fall within 3 SDs</li>
-  </ul>
-  <p>This is why a z-score of ±3 is often used as an outlier threshold.</p>
-
-  <div class="callout tip">
-    <div class="callout-title">Why This Matters for Scaling</div>
-    <p>Standard deviation is the core of z-score standardization (Module 1.7). When you scale a feature by dividing by its SD, you're expressing every value as "how many standard deviations from the mean?" A salary of $123,000 (1 SD above mean) becomes +1.0. A salary of $67,000 (1 SD below mean) becomes -1.0. This puts features on a common scale regardless of their original units.</p>
-  </div>
-</div>
-
-<!-- MODULE 1.4 -->
-<div class="module" id="m1-4">
-  <div class="module-header">
-    <div class="module-num">1.4</div>
-    <div>
-      <div class="module-title">Vectors in p-Dimensional Space</div>
-      <div class="module-src">
-        <span class="src-tag an306">AN306</span>
-      </div>
-    </div>
-  </div>
-
-  <p>Every row in your dataset is a point in space. This is the most important conceptual shift in going from statistics to machine learning.</p>
-
-  <h2>From 2D to p-Dimensions</h2>
-  <p>In 2D, a point is described by two coordinates: (x, y). You can plot it on paper. In 3D, a point has three coordinates: (x, y, z). You can imagine it in a room.</p>
-
-  <p>Now: a job posting has 10 numeric features (salary, years_exp, remote, region_code, etc.). That job posting is a point in 10-dimensional space. You can't visualize it, but the math works the same way.</p>
-
-  <pre><code># A single job posting as a vector (10 features):
-job_posting_42 = [95000, 3.5, 1, 2, 1, 0, 1, 0, 0, 1]
-#                 ↑salary  ↑yrs ↑remote ↑ region (encoded) ↑skills flags ...
-
-# This is a point in 10-dimensional space.
-# The "distance" between two job postings is the distance between 
-# their corresponding points in that space.</code></pre>
-
-  <div class="callout tip">
-    <div class="callout-title">💡 From 2D to p-D — Building Up the Intuition</div>
-    <p><strong>2D point</strong> — you can draw it. Job A = (salary=$80K, years_exp=3). Plot it on a scatter plot: x=80, y=3.</p>
-    <p><strong>3D point</strong> — you can imagine it. Job A = (salary=$80K, years_exp=3, remote=1). A dot in a 3D cube.</p>
-    <p><strong>10D point</strong> — you can't see it, but the math is the same. Job A = [80000, 3, 1, 2, 1, 0, 1, 0, 0, 1]. The distance to Job B is still Euclidean, Manhattan, or cosine — just summing 10 terms instead of 2 or 3.</p>
-    <p><strong>Concretely:</strong> Job A = [80000, 3, 1] and Job B = [65000, 1, 0]. Euclidean distance = √[(80000−65000)² + (3−1)² + (1−0)²] = √[225,000,000 + 4 + 1] ≈ 15,000. Notice how salary dominates — which is exactly why we scale first.</p>
-  </div>
-
-  <h2>Why This Framing Matters</h2>
-  <p>Once you think of data points as vectors in space, clustering becomes intuitive: <strong>find groups of points that are close to each other and far from other groups</strong>. All the complexity of k-means, hierarchical clustering, and DBSCAN is just different algorithms for doing that one task.</p>
-
-  <p>It also makes regression intuitive: <strong>find the hyperplane (a flat surface in p dimensions) that best fits the cloud of points</strong>.</p>
-
-  <div class="callout info">
-    <div class="callout-title">The Curse of Dimensionality</div>
-    <p>In high dimensions (say, a TF-IDF matrix with 500 dimensions), something counterintuitive happens: all points become roughly equidistant from each other. This is why k-means on raw TF-IDF text produces silhouette scores around 0.015 — in 500-dimensional space, every document looks about the same distance from every other document. This is not a failure of the algorithm; it's a property of the space. We'll return to this in Part 8.</p>
-  </div>
-</div>
-
-<!-- MODULE 1.5 -->
-<div class="module" id="m1-5">
-  <div class="module-header">
-    <div class="module-num">1.5</div>
-    <div>
-      <div class="module-title">Distance Metrics — Euclidean, Manhattan, and Cosine</div>
-      <div class="module-src">
-        <span class="src-tag an306">AN306</span>
-      </div>
-    </div>
-  </div>
-
-  <p>To cluster data points, you need to measure how "close" two points are. There are multiple ways to define distance, and the right choice depends on your data type.</p>
-
-  <h2>Euclidean Distance — "As the Crow Flies"</h2>
-  <p>The straight-line distance between two points. Generalization of the Pythagorean theorem to p dimensions.</p>
-
-  <div class="formula">d(A, B) = √[ Σᵢ (aᵢ − bᵢ)² ]</div>
-
-  <p>For two points A = (a₁, a₂) and B = (b₁, b₂) in 2D:</p>
-  <div class="formula">d(A, B) = √[ (a₁−b₁)² + (a₂−b₂)² ]</div>
-
-  <pre><code>import numpy as np
-
-A = np.array([95000, 3.5])  # job posting A: $95k salary, 3.5 years exp
-B = np.array([72000, 1.0])  # job posting B: $72k salary, 1.0 years exp
-
-euclidean = np.sqrt(np.sum((A - B)**2))
-print(f"Euclidean distance: {euclidean:.1f}")
+<")
 # Output: 23003.0 — almost entirely driven by the salary difference!</code></pre>
 
   <div class="callout warn">
@@ -1622,14 +892,7 @@ print(f"Cosine dist: {cosine_dist(A_scaled, B_scaled):.4f}")
 </div><!-- /main -->
 
 <script>
-// Simple nav active state
-const sections = document.querySelectorAll('.module');
-const navLinks = document.querySelectorAll('.nav-ch');
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      navLinks.forEach(l => l.classList.remove('active'));
-      const link = document.querySelector(\\\`.nav-ch[href="#\\\${e.target.id}"]\\\`);
+// Simple "]\\\`);
       if (link) link.classList.add('active');
     }
   });
@@ -1666,14 +929,14 @@ function openNextPart(id){
 <style>
 :root{--bg:#0f1117;--surface:#1a1d27;--surface2:#22263a;--border:#2e3348;--accent:#7c8ff5;--accent2:#56d9b0;--accent3:#f59e45;--accent4:#f56b6b;--text:#e2e6ff;--text2:#9aa3c8;--text3:#5a6080;--success:#56d9b0;--warn:#f59e45;--error:#f56b6b;--info:#7c8ff5;--tip:#c084fc}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
-nav{width:260px;min-width:260px;background:var(--surface);border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;padding:20px 0;z-index:100}
-nav h2{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:0 20px 10px}
-nav a{display:block;padding:5px 20px;color:var(--text2);text-decoration:none;font-size:13px;border-left:3px solid transparent;transition:all .15s}
-nav a:hover{color:var(--text);background:var(--surface2);border-left-color:var(--accent)}
-nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--surface2)}
-nav .part-header{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent3);padding:14px 20px 4px;margin-top:8px}
-main{margin-left:260px;flex:1;padding:48px 56px;max-width:960px}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
+
+
+
+
+
+
+main{flex:1;padding:48px 56px;max-width:960px}
 h1{font-size:2.1rem;font-weight:800;color:var(--text);margin-bottom:6px}
 .subtitle{color:var(--text2);font-size:1rem;margin-bottom:40px}
 h2.part-title{font-size:1.5rem;font-weight:800;color:var(--accent3);border-bottom:2px solid var(--border);padding-bottom:10px;margin:52px 0 24px}
@@ -1724,21 +987,7 @@ hr.section-break{border:none;border-top:1px solid var(--border);margin:48px 0}
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 2: Python Toolkit</span>
 </div>
-<nav>
-  <h2>AN 306 · Full Course</h2>
-  <div class="part-header">Part 2</div>
-  <a href="#2-1">2.1 Colab Basics</a>
-  <a href="#2-2">2.2 GenAI-Assisted Coding</a>
-  <a href="#2-3">2.3 Pandas — Filtering &amp; Selection</a>
-  <a href="#2-4">2.4 Pandas — String Methods &amp; Regex</a>
-  <a href="#2-5">2.5 Pandas — GroupBy &amp; Aggregation</a>
-  <a href="#2-6">2.6 NumPy &amp; Array Shapes</a>
-  <a href="#2-7">2.7 Scikit-learn Core Pattern</a>
-  <a href="#2-8">2.8 Matplotlib — The 4 Essential Plots</a>
-  <a href="#2-9">2.9 Chart Selection Framework</a>
-  <a href="#2-10">2.10 Visualization Best Practices</a>
-  <a href="#2-lab">Lab 2: Data Exploration Notebook</a>
-</nav>
+
 <main>
 <h1>Part 2 — Python Toolkit</h1>
 <p class="subtitle">From Colab setup through the complete data-analysis stack — pandas, NumPy, scikit-learn, and Matplotlib — with every pattern you will use in P1–P4.</p>
@@ -2876,14 +2125,14 @@ function openNextPart(id){
 <style>
 :root{--bg:#0f1117;--surface:#1a1d27;--surface2:#22263a;--border:#2e3348;--accent:#7c8ff5;--accent2:#56d9b0;--accent3:#f59e45;--accent4:#f56b6b;--text:#e2e6ff;--text2:#9aa3c8;--text3:#5a6080;--success:#56d9b0;--warn:#f59e45;--error:#f56b6b;--info:#7c8ff5;--tip:#c084fc}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
-nav{width:260px;min-width:260px;background:var(--surface);border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;padding:20px 0;z-index:100}
-nav h2{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:0 20px 10px}
-nav a{display:block;padding:5px 20px;color:var(--text2);text-decoration:none;font-size:13px;border-left:3px solid transparent;transition:all .15s}
-nav a:hover{color:var(--text);background:var(--surface2);border-left-color:var(--accent)}
-nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--surface2)}
-nav .part-header{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent3);padding:14px 20px 4px;margin-top:8px}
-main{margin-left:260px;flex:1;padding:48px 56px;max-width:960px}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
+
+
+
+
+
+
+main{flex:1;padding:48px 56px;max-width:960px}
 h1{font-size:2.1rem;font-weight:800;color:var(--text);margin-bottom:6px}
 .subtitle{color:var(--text2);font-size:1rem;margin-bottom:40px}
 h2.part-title{font-size:1.5rem;font-weight:800;color:var(--accent3);border-bottom:2px solid var(--border);padding-bottom:10px;margin:52px 0 24px}
@@ -2929,19 +2178,7 @@ hr.section-break{border:none;border-top:1px solid var(--border);margin:48px 0}
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 3: Data Cleaning</span>
 </div>
-<nav>
-  <h2>AN 306 · Full Course</h2>
-  <div class="part-header">Part 3</div>
-  <a href="#3-1">3.1 Data Quality Assessment</a>
-  <a href="#3-2">3.2 Handling Missing Values</a>
-  <a href="#3-3">3.3 Detecting &amp; Handling Outliers</a>
-  <a href="#3-4">3.4 Data Type Coercion</a>
-  <a href="#3-5">3.5 EDA Workflow</a>
-  <a href="#3-6">3.6 Feature Engineering — What &amp; Why</a>
-  <a href="#3-7">3.7 Feature Engineering — Techniques</a>
-  <a href="#3-8">3.8 Encoding Categorical Variables</a>
-  <a href="#3-lab">Lab 3: Clean + Engineer the AI Jobs Dataset</a>
-</nav>
+
 <main>
 <h1>Part 3 — Data Cleaning, EDA &amp; Feature Engineering</h1>
 <p class="subtitle">Raw data is never ready for modeling. This part covers the full pipeline from first inspection through engineered features — everything that happens before you run a single algorithm.</p>
@@ -3776,13 +3013,13 @@ function openNextPart(id){
 <style>
 :root{--bg:#0f1117;--surface:#1a1d27;--surface2:#22263a;--border:#2e3348;--accent:#7c8ff5;--accent2:#56d9b0;--accent3:#f59e45;--accent4:#f56b6b;--text:#e2e6ff;--text2:#9aa3c8;--text3:#5a6080;--success:#56d9b0;--warn:#f59e45;--error:#f56b6b;--info:#7c8ff5;--tip:#c084fc}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
-nav{width:260px;min-width:260px;background:var(--surface);border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;padding:20px 0;z-index:100}
-nav h2{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:0 20px 10px}
-nav a{display:block;padding:5px 20px;color:var(--text2);text-decoration:none;font-size:13px;border-left:3px solid transparent;transition:all .15s}
-nav a:hover{color:var(--text);background:var(--surface2);border-left-color:var(--accent)}
-nav .part-header{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent3);padding:14px 20px 4px;margin-top:8px}
-main{margin-left:260px;flex:1;padding:48px 56px;max-width:960px}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
+
+
+
+
+
+main{flex:1;padding:48px 56px;max-width:960px}
 h1{font-size:2.1rem;font-weight:800;color:var(--text);margin-bottom:6px}
 .subtitle{color:var(--text2);font-size:1rem;margin-bottom:40px}
 h2.part-title{font-size:1.5rem;font-weight:800;color:var(--accent3);border-bottom:2px solid var(--border);padding-bottom:10px;margin:52px 0 24px}
@@ -3830,23 +3067,7 @@ hr.section-break{border:none;border-top:1px solid var(--border);margin:48px 0}
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 4: Regression</span>
 </div>
-<nav>
-  <h2>AN 306 · Full Course</h2>
-  <div class="part-header">Part 4</div>
-  <a href="#4-1">4.1 What Regression Does</a>
-  <a href="#4-2">4.2 OLS — The Math</a>
-  <a href="#4-3">4.3 Residuals &amp; the Fit Line</a>
-  <a href="#4-4">4.4 R² — Coefficient of Determination</a>
-  <a href="#4-5">4.5 The 5 Error Metrics</a>
-  <a href="#4-6">4.6 Exam Trap Register — Regression</a>
-  <a href="#4-7">4.7 Multiple Linear Regression</a>
-  <a href="#4-8">4.8 Adjusted R² &amp; Model Comparison</a>
-  <a href="#4-9">4.9 Regression Diagnostics</a>
-  <a href="#4-10">4.10 Logistic Regression</a>
-  <a href="#4-11">4.11 Regression in statsmodels</a>
-  <a href="#4-12">4.12 Regression in JMP</a>
-  <a href="#4-lab">Lab 4: Salary Regression Model</a>
-</nav>
+
 <main>
 <h1>Part 4 — Regression from Zero</h1>
 <p class="subtitle">From the first scatter plot through multiple regression, all five error metrics, logistic regression, statsmodels output interpretation, and a complete JMP walkthrough — taught from first principles with every exam trap flagged.</p>
@@ -4945,13 +4166,13 @@ function openNextPart(id){
 <style>
 :root{--bg:#0f1117;--surface:#1a1d27;--surface2:#22263a;--border:#2e3348;--accent:#7c8ff5;--accent2:#56d9b0;--accent3:#f59e45;--accent4:#f56b6b;--text:#e2e6ff;--text2:#9aa3c8;--text3:#5a6080;--success:#56d9b0;--warn:#f59e45;--error:#f56b6b;--info:#7c8ff5;--tip:#c084fc}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
-nav{width:260px;min-width:260px;background:var(--surface);border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;padding:20px 0;z-index:100}
-nav h2{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:0 20px 10px}
-nav a{display:block;padding:5px 20px;color:var(--text2);text-decoration:none;font-size:13px;border-left:3px solid transparent;transition:all .15s}
-nav a:hover{color:var(--text);background:var(--surface2);border-left-color:var(--accent)}
-nav .part-header{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent3);padding:14px 20px 4px;margin-top:8px}
-main{margin-left:260px;flex:1;padding:48px 56px;max-width:960px}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
+
+
+
+
+
+main{flex:1;padding:48px 56px;max-width:960px}
 h1{font-size:2.1rem;font-weight:800;color:var(--text);margin-bottom:6px}
 .subtitle{color:var(--text2);font-size:1rem;margin-bottom:40px}
 h2.part-title{font-size:1.5rem;font-weight:800;color:var(--accent3);border-bottom:2px solid var(--border);padding-bottom:10px;margin:52px 0 24px}
@@ -5003,22 +4224,7 @@ hr.section-break{border:none;border-top:1px solid var(--border);margin:48px 0}
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 5: Time-Series Forecasting</span>
 </div>
-<nav>
-  <h2>AN 306 · Full Course</h2>
-  <div class="part-header">Part 5</div>
-  <a href="#5-1">5.1 What Time-Series Is</a>
-  <a href="#5-2">5.2 Loading Data with yfinance</a>
-  <a href="#5-3">5.3 Naïve Forecasting</a>
-  <a href="#5-4">5.4 Simple Moving Average</a>
-  <a href="#5-5">5.5 Exponential Smoothing</a>
-  <a href="#5-6">5.6 Trend &amp; Seasonality with Regression</a>
-  <a href="#5-7">5.7 Error Metrics for Time-Series</a>
-  <a href="#5-8">5.8 SARIMA — Theory</a>
-  <a href="#5-9">5.9 SARIMA — Implementation</a>
-  <a href="#5-10">5.10 Choosing a Forecast Model</a>
-  <a href="#5-11">5.11 P3 Stock Forecast Walkthrough</a>
-  <a href="#5-lab">Lab 5: Stock Forecast Project</a>
-</nav>
+
 <main>
 <h1>Part 5 — Time-Series Forecasting</h1>
 <p class="subtitle">From raw stock data to professional forecasts — Naïve, SMA, Exponential Smoothing, regression for trend and seasonality, all five error metrics, and SARIMA, culminating in a complete P3-style stock forecast pipeline.</p>
@@ -6023,13 +5229,13 @@ function openNextPart(id){
 <style>
 :root{--bg:#0f1117;--surface:#1a1d27;--surface2:#22263a;--border:#2e3348;--accent:#7c8ff5;--accent2:#56d9b0;--accent3:#f59e45;--accent4:#f56b6b;--text:#e2e6ff;--text2:#9aa3c8;--text3:#5a6080;--success:#56d9b0;--warn:#f59e45;--error:#f56b6b;--info:#7c8ff5;--tip:#c084fc}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
-nav{width:260px;min-width:260px;background:var(--surface);border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;padding:20px 0;z-index:100}
-nav h2{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--text3);padding:0 20px 10px}
-nav a{display:block;padding:5px 20px;color:var(--text2);text-decoration:none;font-size:13px;border-left:3px solid transparent;transition:all .15s}
-nav a:hover{color:var(--text);background:var(--surface2);border-left-color:var(--accent)}
-nav .part-header{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent3);padding:14px 20px 4px;margin-top:8px}
-main{margin-left:260px;flex:1;padding:48px 56px;max-width:960px}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
+
+
+
+
+
+main{flex:1;padding:48px 56px;max-width:960px}
 h1{font-size:2.1rem;font-weight:800;color:var(--text);margin-bottom:6px}
 .subtitle{color:var(--text2);font-size:1rem;margin-bottom:40px}
 h2.part-title{font-size:1.5rem;font-weight:800;color:var(--accent3);border-bottom:2px solid var(--border);padding-bottom:10px;margin:52px 0 24px}
@@ -6081,25 +5287,7 @@ hr.section-break{border:none;border-top:1px solid var(--border);margin:48px 0}
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 6: Clustering</span>
 </div>
-<nav>
-  <h2>AN 306 · Full Course</h2>
-  <div class="part-header">Part 6</div>
-  <a href="#6-1">6.1 Why Clustering Exists</a>
-  <a href="#6-2">6.2 K-Means — The Algorithm</a>
-  <a href="#6-3">6.3 K-Means — Implementation</a>
-  <a href="#6-4">6.4 Choosing K — Elbow Method</a>
-  <a href="#6-5">6.5 Silhouette Analysis</a>
-  <a href="#6-6">6.6 K-Means++ Initialization</a>
-  <a href="#6-7">6.7 Feature Scaling for Clustering</a>
-  <a href="#6-8">6.8 Hierarchical Clustering</a>
-  <a href="#6-9">6.9 Dendrograms</a>
-  <a href="#6-10">6.10 DBSCAN</a>
-  <a href="#6-11">6.11 PCA — Dimensionality Reduction</a>
-  <a href="#6-12">6.12 Cluster Profiling &amp; Interpretation</a>
-  <a href="#6-13">6.13 Cluster Stability (ARI)</a>
-  <a href="#6-14">6.14 Choosing a Clustering Algorithm</a>
-  <a href="#6-lab">Lab 6: P4 Job Market Clustering</a>
-</nav>
+
 <main>
 <h1>Part 6 — Clustering from Zero</h1>
 <p class="subtitle">Unsupervised learning without labels — K-Means derivation and implementation, elbow and silhouette methods, K-Means++ initialization, hierarchical clustering with dendrograms, DBSCAN with epsilon and min_samples, PCA for dimensionality reduction, cluster profiling, and the full P4 job market pipeline.</p>
@@ -7319,14 +6507,14 @@ function openNextPart(id){
   --src-ext:#a78bfa; --src-lab:#e879a0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--fg);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
-nav{position:fixed;top:0;left:0;width:260px;height:100vh;background:var(--bg2);border-right:1px solid var(--border);overflow-y:auto;padding:0 0 40px;z-index:100}
-nav .nav-brand{padding:20px 20px 12px;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid var(--border)}
-nav .nav-part{padding:14px 20px 6px;font-size:11px;font-weight:700;color:var(--fg3);text-transform:uppercase;letter-spacing:.08em}
-nav a{display:block;padding:6px 20px;font-size:13px;color:var(--fg2);text-decoration:none;border-left:3px solid transparent;transition:all .15s}
-nav a:hover{color:var(--fg);background:var(--bg3);border-left-color:var(--accent)}
-nav a.active{color:var(--accent);border-left-color:var(--accent);background:rgba(124,143,245,.08)}
-main{margin-left:260px;flex:1;max-width:960px;padding:48px 48px 80px}
+body{background:var(--bg);color:var(--fg);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
+
+
+
+
+
+
+main{flex:1;max-width:960px;padding:48px 48px 80px}
 h1{font-size:2.1rem;font-weight:800;line-height:1.2;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .subtitle{color:var(--fg2);font-size:1.05rem;margin-bottom:36px}
 h2{font-size:1.45rem;font-weight:700;color:var(--fg);margin:52px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--border)}
@@ -7381,26 +6569,7 @@ hr{border:none;border-top:1px solid var(--border);margin:40px 0}
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 7: Association Rules</span>
 </div>
-<nav>
-  <div class="nav-brand">AN 306 Master Course</div>
-  <div class="nav-part">Part 7 — Association Rules</div>
-  <a href="#intro">7.1 Why Association Rules?</a>
-  <a href="#metrics">7.2 Support, Confidence, Lift</a>
-  <a href="#apriori">7.3 The Apriori Algorithm</a>
-  <a href="#mlxtend">7.4 mlxtend Implementation</a>
-  <a href="#interpret">7.5 Interpreting Rules</a>
-  <a href="#filtering">7.6 Filtering &amp; Ranking Rules</a>
-  <a href="#fp-growth">7.7 FP-Growth (Faster Alternative)</a>
-  <a href="#traps">7.8 Common Mistakes &amp; Exam Traps</a>
-  <a href="#lab7">Lab 7 — Market Basket Analysis</a>
-  <div class="nav-part">Other Parts</div>
-  <a href="https://claude.ai/artifact/B8nEiCYxS29tXGPrYqCrQu" target="_blank">Part 0–1: Foundations</a>
-  <a href="https://claude.ai/artifact/LwC1pSk5xTzJyPyP3pX759" target="_blank">Part 2: Python Toolkit</a>
-  <a href="https://claude.ai/artifact/1RynRXNNszkqn9qkj2Ftst" target="_blank">Part 3: EDA &amp; Features</a>
-  <a href="https://claude.ai/artifact/4AoXmRUA8zKPcoaC5kKvfF" target="_blank">Part 4: Regression</a>
-  <a href="https://claude.ai/artifact/E3JkEoAUj9gLNm7dvXLtwG" target="_blank">Part 5: Time Series</a>
-  <a href="https://claude.ai/artifact/CRuqDKus1WaNNtWQwVbiJ3" target="_blank">Part 6: Clustering</a>
-</nav>
+
 <main>
 
 <h1>Part 7 — Association Rule Analysis</h1>
@@ -8398,14 +7567,14 @@ function openNextPart(id){
   --src-ext:#a78bfa; --src-lab:#e879a0;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--fg);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
-nav{position:fixed;top:0;left:0;width:260px;height:100vh;background:var(--bg2);border-right:1px solid var(--border);overflow-y:auto;padding:0 0 40px;z-index:100}
-nav .nav-brand{padding:20px 20px 12px;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid var(--border)}
-nav .nav-part{padding:14px 20px 6px;font-size:11px;font-weight:700;color:var(--fg3);text-transform:uppercase;letter-spacing:.08em}
-nav a{display:block;padding:6px 20px;font-size:13px;color:var(--fg2);text-decoration:none;border-left:3px solid transparent;transition:all .15s}
-nav a:hover{color:var(--fg);background:var(--bg3);border-left-color:var(--accent)}
-nav a.active{color:var(--accent);border-left-color:var(--accent);background:rgba(124,143,245,.08)}
-main{margin-left:260px;flex:1;max-width:960px;padding:48px 48px 80px}
+body{background:var(--bg);color:var(--fg);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
+
+
+
+
+
+
+main{flex:1;max-width:960px;padding:48px 48px 80px}
 h1{font-size:2.1rem;font-weight:800;line-height:1.2;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .subtitle{color:var(--fg2);font-size:1.05rem;margin-bottom:36px}
 h2{font-size:1.45rem;font-weight:700;color:var(--fg);margin:52px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--border)}
@@ -8467,31 +7636,7 @@ hr{border:none;border-top:1px solid var(--border);margin:40px 0}
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 8: NLP</span>
 </div>
-<nav>
-  <div class="nav-brand">AN 306 Master Course</div>
-  <div class="nav-part">Part 8 — NLP &amp; Text</div>
-  <a href="#intro">8.1 Why Text Analytics?</a>
-  <a href="#tokenization">8.2 Tokenization</a>
-  <a href="#cleaning">8.3 Text Cleaning</a>
-  <a href="#stopwords">8.4 Stopword Removal</a>
-  <a href="#stemming">8.5 Stemming &amp; Lemmatization</a>
-  <a href="#bow">8.6 Bag of Words &amp; CountVectorizer</a>
-  <a href="#tfidf">8.7 TF-IDF</a>
-  <a href="#cosine">8.8 Cosine Similarity</a>
-  <a href="#sentiment">8.9 Sentiment Analysis</a>
-  <a href="#lda">8.10 LDA Topic Modeling</a>
-  <a href="#pipeline">8.11 Full Text Pipeline</a>
-  <a href="#traps">8.12 Exam Traps &amp; Source Errors</a>
-  <a href="#lab8">Lab 8 — Job Posting NLP</a>
-  <div class="nav-part">Other Parts</div>
-  <a href="https://claude.ai/artifact/B8nEiCYxS29tXGPrYqCrQu" target="_blank">Part 0–1: Foundations</a>
-  <a href="https://claude.ai/artifact/LwC1pSk5xTzJyPyP3pX759" target="_blank">Part 2: Python Toolkit</a>
-  <a href="https://claude.ai/artifact/1RynRXNNszkqn9qkj2Ftst" target="_blank">Part 3: EDA &amp; Features</a>
-  <a href="https://claude.ai/artifact/4AoXmRUA8zKPcoaC5kKvfF" target="_blank">Part 4: Regression</a>
-  <a href="https://claude.ai/artifact/E3JkEoAUj9gLNm7dvXLtwG" target="_blank">Part 5: Time Series</a>
-  <a href="https://claude.ai/artifact/CRuqDKus1WaNNtWQwVbiJ3" target="_blank">Part 6: Clustering</a>
-  <a href="https://claude.ai/artifact/PCJB4fWk68EZ4WoTKtbpo9" target="_blank">Part 7: Association Rules</a>
-</nav>
+
 <main>
 
 <h1>Part 8 — NLP &amp; Text Analytics</h1>
@@ -9872,15 +9017,15 @@ function openNextPart(id){
   --nav-w:260px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
 /* NAV */
-nav{width:var(--nav-w);min-height:100vh;background:var(--bg2);border-right:1px solid var(--border);position:fixed;top:0;left:0;overflow-y:auto;padding:0 0 40px}
+
 .nav-logo{padding:20px 20px 12px;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.05em;border-bottom:1px solid var(--border)}
 .nav-part{padding:14px 20px 6px;font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em}
-nav a{display:block;padding:6px 20px 6px 24px;font-size:13px;color:var(--text2);text-decoration:none;border-left:2px solid transparent;transition:.15s}
-nav a:hover,nav a.active{color:var(--text);border-left-color:var(--accent);background:rgba(124,143,245,.07)}
-nav a.sub{padding-left:36px;font-size:12px;color:var(--text3)}
-nav a.sub:hover{color:var(--text2);border-left-color:var(--accent2)}
+
+
+
+
 /* MAIN */
 main{margin-left:var(--nav-w);flex:1;padding:48px 56px;max-width:1100px}
 /* HEADERS */
@@ -9967,7 +9112,7 @@ blockquote{border-left:3px solid var(--accent);padding:10px 16px;margin:14px 0;b
 /* PROGRESS TRACKER */
 .progress-bar{background:var(--border);height:6px;border-radius:3px;margin-top:4px}
 .progress-fill{background:linear-gradient(90deg,var(--accent),var(--accent2));height:100%;border-radius:3px}
-@media(max-width:900px){nav{display:none}main{margin-left:0;padding:24px 20px}.grid2,.grid3{grid-template-columns:1fr}.pipe-step::after{display:none}}
+@media(max-width:900px){main{margin-left:0;padding:24px 20px}.grid2,.grid3{grid-template-columns:1fr}.pipe-step::after{display:none}}
 </style>
 </head>
 <body>
@@ -9976,25 +9121,7 @@ blockquote{border-left:3px solid var(--accent);padding:10px 16px;margin:14px 0;b
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 8b: Advanced NLP Lab</span>
 </div>
 
-<nav>
-  <div class="nav-logo">🧠 AN306 · Part 8b</div>
-  <div class="nav-part">NLP Deep Dive</div>
-  <a href="#overview">Overview & Sources</a>
-  <a href="#mod8b1" class="sub">8b.1 — NLP Evolution</a>
-  <a href="#mod8b2" class="sub">8b.2 — POS Tagging</a>
-  <a href="#mod8b3" class="sub">8b.3 — Named Entity Recognition</a>
-  <a href="#mod8b4" class="sub">8b.4 — Word Embeddings</a>
-  <a href="#mod8b5" class="sub">8b.5 — Parse Trees & Parsing</a>
-  <a href="#mod8b6" class="sub">8b.6 — Coref & WSD</a>
-  <a href="#mod8b7" class="sub">8b.7 — NLP vs GenAI</a>
-  <a href="#mod8b8" class="sub">8b.8 — NLP Challenges</a>
-  <a href="#mod8b9" class="sub">8b.9 — Industry Applications</a>
-  <a href="#mod8b10" class="sub">8b.10 — From spaCy to Transformers</a>
-  <a href="#summary">Section Summary</a>
-  <div class="nav-part">Other Parts</div>
-  <a href="#">← Part 8 (NLP Foundations)</a>
-  <a href="#">Part 9 (SQL / Excel / BI) →</a>
-</nav>
+
 
 <main>
 
@@ -11231,14 +10358,7 @@ for ent in doc.ents:
 </main>
 
 <script>
-// Active nav highlighting
-const sections = document.querySelectorAll('[id]');
-const links = document.querySelectorAll('nav a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => {
-    if (window.scrollY >= s.offsetTop - 120) current = s.id;
-  });
+// Active );
   links.forEach(l => {
     l.classList.toggle('active', l.getAttribute('href') === '#' + current);
   });
@@ -11320,14 +10440,14 @@ function openNextPart(id){
   --border:#2d3348; --radius:10px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--fg);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
-nav{position:fixed;top:0;left:0;width:260px;height:100vh;background:var(--bg2);border-right:1px solid var(--border);overflow-y:auto;padding:0 0 40px;z-index:100}
-nav .nav-brand{padding:20px 20px 12px;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.05em;text-transform:uppercase;border-bottom:1px solid var(--border)}
-nav .nav-part{padding:14px 20px 6px;font-size:11px;font-weight:700;color:var(--fg3);text-transform:uppercase;letter-spacing:.08em}
-nav a{display:block;padding:6px 20px;font-size:13px;color:var(--fg2);text-decoration:none;border-left:3px solid transparent;transition:all .15s}
-nav a:hover{color:var(--fg);background:var(--bg3);border-left-color:var(--accent)}
-nav a.active{color:var(--accent);border-left-color:var(--accent);background:rgba(124,143,245,.08)}
-main{margin-left:260px;flex:1;max-width:960px;padding:48px 48px 80px}
+body{background:var(--bg);color:var(--fg);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
+
+
+
+
+
+
+main{flex:1;max-width:960px;padding:48px 48px 80px}
 h1{font-size:2.1rem;font-weight:800;line-height:1.2;margin-bottom:8px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .subtitle{color:var(--fg2);font-size:1.05rem;margin-bottom:36px}
 h2{font-size:1.45rem;font-weight:700;color:var(--fg);margin:52px 0 16px;padding-bottom:10px;border-bottom:2px solid var(--border)}
@@ -11386,34 +10506,7 @@ hr{border:none;border-top:1px solid var(--border);margin:40px 0}
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 9: Job Readiness</span>
 </div>
-<nav>
-  <div class="nav-brand">AN 306 Master Course</div>
-  <div class="nav-part">Part 9 — Job Toolkit</div>
-  <a href="#sql">9.1 SQL from Zero</a>
-  <a href="#sql-select">→ SELECT / WHERE / ORDER</a>
-  <a href="#sql-join">→ JOINs</a>
-  <a href="#sql-group">→ GROUP BY / HAVING</a>
-  <a href="#sql-business">→ Business Query</a>
-  <a href="#excel">9.2 Excel Job-Ready</a>
-  <a href="#excel-lookup">→ Lookups</a>
-  <a href="#excel-ifs">→ IFS Functions</a>
-  <a href="#excel-text">→ Text Functions</a>
-  <a href="#excel-pivot">→ PivotTables</a>
-  <a href="#excel-chart">→ Clean Charts</a>
-  <a href="#powerbi">9.3 Power BI</a>
-  <a href="#pbi-import">→ Import &amp; Model</a>
-  <a href="#pbi-visuals">→ Visuals &amp; Slicers</a>
-  <a href="#pbi-dax">→ DAX Measures</a>
-  <a href="#tableau">9.4 Tableau</a>
-  <a href="#r">9.5 R for Python Users</a>
-  <a href="#interview">9.6 Interview Prep</a>
-  <div class="nav-part">Other Parts</div>
-  <a href="https://claude.ai/artifact/GqBkuG65Ko3jDUJoQjGh5H" target="_blank">Part 8: NLP &amp; Text</a>
-  <a href="https://claude.ai/artifact/PCJB4fWk68EZ4WoTKtbpo9" target="_blank">Part 7: Association Rules</a>
-  <a href="https://claude.ai/artifact/CRuqDKus1WaNNtWQwVbiJ3" target="_blank">Part 6: Clustering</a>
-  <a href="https://claude.ai/artifact/E3JkEoAUj9gLNm7dvXLtwG" target="_blank">Part 5: Time Series</a>
-  <a href="https://claude.ai/artifact/4AoXmRUA8zKPcoaC5kKvfF" target="_blank">Part 4: Regression</a>
-</nav>
+
 <main>
 
 <h1>Part 9 — Job-Readiness Toolkit</h1>
@@ -12273,25 +11366,7 @@ function openNextPart(id){
   "part-10a": `<div style="position:sticky;top:0;z-index:999;background:#1a1d27;border-bottom:1px solid rgba(255,255,255,0.1);padding:10px 20px;display:flex;align-items:center;gap:16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 10a: How Neural Networks Learn</span>
-</div><nav>
-  <div class="nav-brand">AN 306 Master Course</div>
-  <div class="nav-part">Part 10a — Neural Net Learning</div>
-  <a href="#why-learn">10a.1 How Does Learning Happen?</a>
-  <a href="#ols-bridge">10a.2 You Already Saw This (OLS Bridge)</a>
-  <a href="#derivatives">10a.3 Derivatives Without the Textbook</a>
-  <a href="#gradient-descent">10a.4 Gradient Descent: Rolling Downhill</a>
-  <a href="#multi-layer">10a.5 The Problem With Many Layers</a>
-  <a href="#chain-rule">10a.6 The Chain Rule: The Domino Effect</a>
-  <a href="#backprop">10a.7 Backpropagation Step by Step</a>
-  <a href="#code">10a.8 Watching It Learn in Python</a>
-  <a href="#gpu">10a.9 Why GPUs Changed Everything</a>
-  <a href="#summary">10a.10 What You Now Know</a>
-  <div class="nav-part">Other Parts</div>
-  <a href="https://claude.ai/artifact/B8nEiCYxS29tXGPrYqCrQu" target="_blank">Part 1: Foundations</a>
-  <a href="https://claude.ai/artifact/4AoXmRUA8zKPcoaC5kKvfF" target="_blank">Part 4: Regression</a>
-  <a href="https://claude.ai/artifact/A9aHuq2EfdjyCjq87wpLYK" target="_blank">Part 12: Model Selection &amp; RF</a>
-  <a href="https://claude.ai/artifact/7Rgue8BGNus1HoVQXuL1Aq" target="_blank">Part 13: Stats Foundations</a>
-</nav>
+</div>
 <main>
 
 <h1>Part 10a — How Neural Networks Learn</h1>
@@ -12577,22 +11652,7 @@ function openNextPart(id){
   "part-10b": `<div style="position:sticky;top:0;z-index:999;background:#1a1d27;border-bottom:1px solid rgba(255,255,255,0.1);padding:10px 20px;display:flex;align-items:center;gap:16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;">
   <a href="javascript:window.close()" onclick="window.close();window.location.href='https://dylangagliordi.github.io/data-ai-course-bundle/';" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:13px;display:flex;align-items:center;gap:6px;">&#8592; Course Map</a>
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 10b: What Really Is an LLM</span>
-</div><nav>
-  <div class="nav-brand">AN 306 Master Course</div>
-  <div class="nav-part">Part 10b — What Is an LLM</div>
-  <a href="#problem">10b.1 The Problem Classical NLP Hit</a>
-  <a href="#tokens">10b.2 Tokens: Breaking Language Apart</a>
-  <a href="#embeddings">10b.3 Embeddings: Words on a Map</a>
-  <a href="#next-word">10b.4 The Core Task: Predict the Next Word</a>
-  <a href="#attention">10b.5 Attention: Looking Around for Context</a>
-  <a href="#transformer">10b.6 The Transformer Architecture</a>
-  <a href="#pretraining">10b.7 Pre-Training vs Fine-Tuning</a>
-  <a href="#scale">10b.8 Scale and Emergence</a>
-  <a href="#rlhf">10b.9 RLHF: Teaching Helpfulness</a>
-  <a href="#what-it-is">10b.10 What an LLM Actually Is (and Isn't)</a>
-  <div class="nav-part">Other Parts</div>
-  <a href="https://claude.ai/artifact/LJ822at5RMbxuUZxjSgdpe" target="_blank">Part 8b: NLP Deep Dive</a>
-</nav>
+</div>
 <main>
 
 <h1>Part 10b — What Really Is an LLM?</h1>
@@ -12873,7 +11933,7 @@ body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:var(--bg);color
 .ni:hover{color:var(--text);background:rgba(124,143,245,.06)}
 .ni.active{color:var(--accent);background:rgba(124,143,245,.09);border-left-color:var(--accent)}
 .ni .ic{width:15px;text-align:center;flex-shrink:0;font-size:12px}
-#main{margin-left:260px;padding:48px 56px;max-width:900px}
+#main{padding:48px 56px;max-width:900px}
 #content{animation:fadein .25s ease}
 @keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 h2{font-size:32px;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.25}
@@ -12939,57 +11999,7 @@ ol{padding-left:18px}
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 11: AN300 Integration</span>
 </div>
 
-<nav id="sidebar">
-  <div class="sb-header">
-    <div class="sb-tag">AN300 &bull; Lee-Post</div>
-    <div class="sb-title">Part 11 — AN300 Deep Dive Integration</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">Overview</div>
-    <div class="ni active" onclick="show('overview')" id="ni-overview"><span class="ic">🏠</span>What This Part Covers</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">11.1 — Time-Series (JMP)</div>
-    <div class="ni" onclick="show('ts-methods')" id="ni-ts-methods"><span class="ic">📈</span>5 Methods &amp; When to Use</div>
-    <div class="ni" onclick="show('ts-errors')" id="ni-ts-errors"><span class="ic">📊</span>CFE / MFE / MAE / SSE / MAPE</div>
-    <div class="ni" onclick="show('ts-jmp')" id="ni-ts-jmp"><span class="ic">⚙</span>JMP Procedures</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">11.2 — Regression (JMP)</div>
-    <div class="ni" onclick="show('reg-fit')" id="ni-reg-fit"><span class="ic">📐</span>R², Adj R², Se — Full Rules</div>
-    <div class="ni" onclick="show('reg-dummy')" id="ni-reg-dummy"><span class="ic">📋</span>Dummy Variables (k−1 Rule)</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">11.3 — Clustering (JMP)</div>
-    <div class="ni" onclick="show('cl-hier')" id="ni-cl-hier"><span class="ic">🌳</span>Hierarchical — All 4 Outputs</div>
-    <div class="ni" onclick="show('cl-kmeans')" id="ni-cl-kmeans"><span class="ic">🔵</span>K-Means — Biplot &amp; Parallel Coords</div>
-    <div class="ni" onclick="show('cl-compare')" id="ni-cl-compare"><span class="ic">⚖</span>Method Comparison &amp; CCC</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">11.4 — Association Rules ★</div>
-    <div class="ni" onclick="show('ar-intro')" id="ni-ar-intro"><span class="ic">🔗</span>What &amp; Why (New Module)</div>
-    <div class="ni" onclick="show('ar-metrics')" id="ni-ar-metrics"><span class="ic">📐</span>Support / Confidence / Lift</div>
-    <div class="ni" onclick="show('ar-worked')" id="ni-ar-worked"><span class="ic">✏</span>Hand-Calculation Walkthrough</div>
-    <div class="ni" onclick="show('ar-jmp')" id="ni-ar-jmp"><span class="ic">📦</span>JMP Output Reading</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">11.5 — Text Mining (JMP)</div>
-    <div class="ni" onclick="show('tm-pipeline')" id="ni-tm-pipeline"><span class="ic">🔄</span>Tokenize → Phrase → Term</div>
-    <div class="ni" onclick="show('tm-dtm')" id="ni-tm-dtm"><span class="ic">🗂</span>DTM &amp; Analysis Outputs</div>
-    <div class="ni" onclick="show('tm-pitfalls')" id="ni-tm-pitfalls"><span class="ic">⚠</span>JMP Pitfalls (Exam-Confirmed)</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">11.6 — Master Reference</div>
-    <div class="ni" onclick="show('cheatsheet')" id="ni-cheatsheet"><span class="ic">⚡</span>All Exam Traps &amp; Facts</div>
-  </div>
-</nav>
-
-<div id="main">
-<div id="content"></div>
-</div>
-
-<script>
-var pages = {};
+<;
 
 pages['overview'] = \\\`
 <h2>Part 11 — AN300 Deep Dive Integration</h2>
@@ -13893,7 +12903,7 @@ body{font-family:'IBM Plex Sans',system-ui,sans-serif;background:var(--bg);color
 .ni:hover{color:var(--text);background:rgba(124,143,245,.06)}
 .ni.active{color:var(--accent);background:rgba(124,143,245,.09);border-left-color:var(--accent)}
 .ni .ic{width:15px;text-align:center;flex-shrink:0;font-size:12px}
-#main{margin-left:260px;padding:48px 56px;max-width:900px}
+#main{padding:48px 56px;max-width:900px}
 #content{animation:fadein .25s ease}
 @keyframes fadein{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
 h2{font-size:32px;font-weight:700;color:var(--text);margin-bottom:4px;line-height:1.25}
@@ -13959,51 +12969,7 @@ li{font-size:14px;color:rgba(226,232,240,.78);margin-bottom:6px;line-height:1.75
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 12: Model Selection</span>
 </div>
 
-<nav id="sidebar">
-  <div class="sb-header">
-    <div class="sb-tag">Model Selection</div>
-    <div class="sb-title">Part 12 — Linear vs Non-Linear & Random Forest Math</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">Overview</div>
-    <div class="ni active" onclick="show('overview')" id="ni-overview"><span class="ic">🏠</span>What This Part Covers</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">12.1 — Data Shape & Model Choice</div>
-    <div class="ni" onclick="show('shape')" id="ni-shape"><span class="ic">📐</span>Linear vs Non-Linear Shape</div>
-    <div class="ni" onclick="show('examples')" id="ni-examples"><span class="ic">🏠</span>Real-World Examples by Domain</div>
-    <div class="ni" onclick="show('math-origins')" id="ni-math-origins"><span class="ic">∑</span>Do Models All Start Linear?</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">12.2 — Random Forest Math</div>
-    <div class="ni" onclick="show('rf-step1')" id="ni-rf-step1"><span class="ic">🎲</span>Step 1: Bootstrapping</div>
-    <div class="ni" onclick="show('rf-step2')" id="ni-rf-step2"><span class="ic">🎯</span>Step 2: Feature Subsets</div>
-    <div class="ni" onclick="show('rf-step3')" id="ni-rf-step3"><span class="ic">✂</span>Step 3: Splitting Math (Gini / MSE)</div>
-    <div class="ni" onclick="show('rf-step4')" id="ni-rf-step4"><span class="ic">🌲</span>Step 4: Tree Termination</div>
-    <div class="ni" onclick="show('rf-step5')" id="ni-rf-step5"><span class="ic">🗳</span>Step 5: Voting & Averaging</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">12.3 — Splits Explained</div>
-    <div class="ni" onclick="show('two-splits')" id="ni-two-splits"><span class="ic">⚖</span>Train/Test Split vs Bootstrapping</div>
-    <div class="ni" onclick="show('oob')" id="ni-oob"><span class="ic">🔮</span>Out-of-Bag (OOB) Score</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">12.4 — Full Worked Example</div>
-    <div class="ni" onclick="show('walkthrough')" id="ni-walkthrough"><span class="ic">🏡</span>House Price Prediction (End-to-End)</div>
-    <div class="ni" onclick="show('code-compare')" id="ni-code-compare"><span class="ic">💻</span>Code: LR vs RF on Same Data</div>
-  </div>
-  <div class="sb-section">
-    <div class="sb-label">12.5 — Reference</div>
-    <div class="ni" onclick="show('cheatsheet')" id="ni-cheatsheet"><span class="ic">⚡</span>Quick-Decision Cheatsheet</div>
-  </div>
-</nav>
-
-<div id="main">
-<div id="content"></div>
-</div>
-
-<script>
-var pages = {};
+<;
 
 pages['overview'] = \\\`
 <h2>Part 12 — Linear vs Non-Linear & Random Forest Math</h2>
@@ -14760,14 +13726,14 @@ function openNextPart(id){
   --success:#34d399; --warn:#fbbf24; --error:#f87171; --info:#60a5fa;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;display:flex;min-height:100vh}
-nav{width:260px;min-width:260px;background:var(--bg2);border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;overflow-y:auto;padding:20px 0}
-nav h2{font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:var(--text3);padding:0 20px 10px}
-nav a{display:block;padding:7px 20px;color:var(--text2);text-decoration:none;font-size:.88rem;border-left:3px solid transparent;transition:all .2s}
-nav a:hover,nav a.active{color:var(--accent);border-left-color:var(--accent);background:var(--bg3)}
-nav .nav-section{margin-top:14px}
-nav .nav-label{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--text3);padding:4px 20px;margin-top:8px}
-main{margin-left:260px;flex:1;padding:40px 48px;max-width:900px}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;min-height:100vh}
+
+
+
+
+
+
+main{flex:1;padding:40px 48px;max-width:900px}
 h1{font-size:2rem;font-weight:700;color:var(--text);margin-bottom:.4rem}
 h2{font-size:1.4rem;font-weight:700;color:var(--accent);margin:2.5rem 0 1rem;padding-top:1rem;border-top:1px solid var(--border)}
 h3{font-size:1.1rem;font-weight:600;color:var(--accent2);margin:1.6rem 0 .6rem}
@@ -14831,42 +13797,7 @@ tr:hover{background:var(--bg3)}
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Part 13: Statistical Inference</span>
 </div>
 
-<nav>
-  <h2>Part 13</h2>
-  <a href="#overview">Overview</a>
-  <div class="nav-section">
-    <div class="nav-label">Unit 1 — Data Basics</div>
-    <a href="#variables">Variable Types</a>
-    <a href="#study-design">Study Design</a>
-    <a href="#descriptive">Descriptive Statistics</a>
-    <a href="#distributions">Distributions & Shape</a>
-  </div>
-  <div class="nav-section">
-    <div class="nav-label">Unit 2 — Sampling</div>
-    <a href="#sampling-dist">Sampling Distributions</a>
-    <a href="#bootstrap">Bootstrap & 2×SE CI</a>
-    <a href="#notation">Parameter vs Statistic</a>
-  </div>
-  <div class="nav-section">
-    <div class="nav-label">Unit 3 — Normal & Hypothesis</div>
-    <a href="#normal">Normal Distribution</a>
-    <a href="#z-scores">Z-Scores</a>
-    <a href="#hypothesis">Hypothesis Testing</a>
-    <a href="#pvalue">P-Values in Depth</a>
-  </div>
-  <div class="nav-section">
-    <div class="nav-label">Unit 4 — Formula-Based CI</div>
-    <a href="#z-ci">Z-Interval for Proportions</a>
-    <a href="#sample-size">Sample Size Calculation</a>
-    <a href="#t-dist">T-Distribution & T-Tests</a>
-  </div>
-  <div class="nav-section">
-    <div class="nav-label">Unit 5 — Two-Sample Methods</div>
-    <a href="#diff-prop">Difference in Proportions</a>
-    <a href="#diff-means">Difference in Means</a>
-    <a href="#complete-picture">The Complete Picture</a>
-  </div>
-</nav>
+
 
 <main>
 
@@ -15921,14 +14852,14 @@ function openNextPart(id){
   --nav-w:260px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;display:flex;min-height:100vh}
-nav{width:var(--nav-w);min-height:100vh;background:var(--bg2);border-right:1px solid var(--border);position:fixed;top:0;left:0;overflow-y:auto;padding:0 0 40px}
+body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,sans-serif;font-size:15px;line-height:1.7;min-height:100vh}
+
 .nav-logo{padding:20px 20px 12px;font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.05em;border-bottom:1px solid var(--border)}
 .nav-part{padding:14px 20px 6px;font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.1em}
-nav a{display:block;padding:6px 20px 6px 24px;font-size:13px;color:var(--text2);text-decoration:none;border-left:2px solid transparent;transition:.15s}
-nav a:hover,nav a.active{color:var(--text);border-left-color:var(--accent);background:rgba(124,143,245,.07)}
-nav a.sub{padding-left:36px;font-size:12px;color:var(--text3)}
-nav a.sub:hover{color:var(--text2);border-left-color:var(--accent2)}
+
+
+
+
 main{margin-left:var(--nav-w);flex:1;padding:48px 56px;max-width:1100px}
 h1{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px}
 h2{font-size:1.4rem;font-weight:700;color:var(--text);margin:40px 0 14px;padding-bottom:8px;border-bottom:1px solid var(--border)}
@@ -15981,7 +14912,7 @@ tr:hover td{background:rgba(124,143,245,.03)}
 /* Source map */
 .src-row{padding:10px 14px;border-bottom:1px solid var(--border);font-size:13px}
 .src-row:last-child{border-bottom:none}
-@media(max-width:900px){nav{display:none}main{margin-left:0;padding:24px 20px}.grid2{grid-template-columns:1fr}}
+@media(max-width:900px){main{margin-left:0;padding:24px 20px}.grid2{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -15990,17 +14921,7 @@ tr:hover td{background:rgba(124,143,245,.03)}
   <span style="color:rgba(255,255,255,0.7);font-size:13px;font-weight:500;margin-left:auto;">Appendix</span>
 </div>
 
-<nav>
-  <div class="nav-logo">📚 AN306 · Appendix</div>
-  <div class="nav-part">Reference</div>
-  <a href="#glossary">A — Glossary</a>
-  <a href="#formulas" class="sub">B — Formula Reference</a>
-  <a href="#errors" class="sub">C — Source Error Register</a>
-  <a href="#sourcemap" class="sub">D — Source Map</a>
-  <a href="#codelib" class="sub">E — Code Library</a>
-  <div class="nav-part">Other Parts</div>
-  <a href="#">← Part 10 (Capstone)</a>
-</nav>
+
 
 <main>
 
@@ -16568,10 +15489,7 @@ plt.title('Station 7 accounts for 61% of unplanned maintenance costs')</code></p
 
 <script>
 const sections = document.querySelectorAll('[id]');
-const links = document.querySelectorAll('nav a');
-window.addEventListener('scroll', () => {
-  let current = '';
-  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+const links = document.querySelectorAll(');
   links.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + current); });
 });
 <\\/script>
